@@ -4,393 +4,576 @@
 <title>Surya Prabhakaran – Chief Architect</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@700&display=swap'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  body {
-    font-family: 'Inter', sans-serif;
-    background: #f0f4f8;
-    color: #2d3748;
-    font-size: 15px;
-    line-height: 1.6;
-  }
+:root {
+  --navy:   #060d1f;
+  --navy2:  #0d1b35;
+  --blue:   #1e40af;
+  --cyan:   #06b6d4;
+  --cyan2:  #0891b2;
+  --gold:   #f59e0b;
+  --gold2:  #d97706;
+  --light:  #f0f6ff;
+  --card:   #ffffff;
+  --text:   #1e293b;
+  --muted:  #64748b;
+  --border: #e2e8f0;
+}
 
-  /* ── Layout ── */
-  .page-wrap {
-    max-width: 1200px;
-    margin: 32px auto 40px;
-    padding: 0 16px;
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 24px;
-    align-items: start;
-  }
+html { scroll-behavior: smooth; }
 
-  /* ── Sidebar ── */
-  .sidebar {
-    background: linear-gradient(160deg, #0f2c4a 0%, #0d3d56 60%, #0a5068 100%);
-    border-radius: 16px;
-    overflow: hidden;
-    color: #e2e8f0;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-    position: sticky;
-    top: 24px;
-  }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--light);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.65;
+}
 
-  .sidebar-top {
-    padding: 24px 16px 20px;
-    text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+/* ─── HERO HEADER ─────────────────────────────────── */
+.hero {
+  background: linear-gradient(135deg, #060d1f 0%, #0d1b35 40%, #0c2461 70%, #1e3a8a 100%);
+  padding: 48px 32px 56px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(6,182,212,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(245,158,11,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  position: relative;
+  z-index: 1;
+}
+.hero-avatar {
+  flex-shrink: 0;
+  width: 110px; height: 110px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cyan), #1e40af);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 0 4px rgba(6,182,212,0.25), 0 0 0 8px rgba(6,182,212,0.1);
+  animation: pulse-ring 3s ease-in-out infinite;
+}
+@keyframes pulse-ring {
+  0%,100% { box-shadow: 0 0 0 4px rgba(6,182,212,0.25), 0 0 0 8px rgba(6,182,212,0.1); }
+  50%      { box-shadow: 0 0 0 6px rgba(6,182,212,0.35), 0 0 0 14px rgba(6,182,212,0.08); }
+}
+.hero-avatar i { font-size: 48px; color: #fff; }
 
-  /* Scale badge to fit sidebar */
-  .badge-scale-wrap {
-    width: 252px;
-    overflow: hidden;
-  }
-  .badge-scale-wrap .badge-base {
-    display: block;
-    transform: scale(0.95);
-    transform-origin: top center;
-  }
-  /* Fallback link visible on dark bg */
-  .badge-base__link {
-    color: #fff !important;
-    font-weight: 800;
-    font-size: 16px;
-    text-decoration: none;
-    display: block;
-    padding: 8px 0;
-    letter-spacing: 0.2px;
-  }
+.hero-text h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+.hero-text .title-pill {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--gold), var(--gold2));
+  color: #1a1a00;
+  font-size: 13px; font-weight: 700;
+  padding: 4px 14px; border-radius: 20px;
+  letter-spacing: 0.5px; margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.hero-meta {
+  display: flex; flex-wrap: wrap; gap: 16px; margin-top: 4px;
+}
+.hero-meta span {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 13px; color: rgba(255,255,255,0.65);
+}
+.hero-meta i { color: var(--cyan); font-size: 12px; }
 
-  /* Profile header */
-  .avatar-ring {
-    width: 96px; height: 96px; border-radius: 50%;
-    background: rgba(255,255,255,0.08);
-    border: 3px solid rgba(77,208,225,0.5);
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 14px;
-    box-shadow: 0 0 0 6px rgba(77,208,225,0.1);
-  }
-  .avatar-inner {
-    width: 78px; height: 78px; border-radius: 50%;
-    background: linear-gradient(135deg, #00b4d8, #0077b6);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .avatar-inner i { font-size: 36px; color: #fff; }
+.hero-chips {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;
+}
+.hero-chip {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.85);
+  font-size: 12px; font-weight: 500;
+  padding: 4px 12px; border-radius: 20px;
+  backdrop-filter: blur(4px);
+  transition: background .2s;
+}
+.hero-chip:hover { background: rgba(6,182,212,0.2); }
 
-  .profile-name {
-    font-size: 20px; font-weight: 700; color: #fff;
-    margin-bottom: 4px; letter-spacing: 0.3px;
-  }
-  .profile-title {
-    font-size: 13px; font-weight: 600; color: #4dd0e1;
-    margin-bottom: 6px; letter-spacing: 0.5px;
-  }
-  .profile-location, .profile-exp {
-    font-size: 12px; color: rgba(255,255,255,0.55);
-    margin-bottom: 4px;
-  }
-  .profile-location i, .profile-exp i { margin-right: 5px; color: #4dd0e1; }
+.hero-actions {
+  margin-left: auto; display: flex; flex-direction: column; gap: 10px; align-items: flex-end; flex-shrink: 0;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: linear-gradient(90deg, var(--cyan), var(--cyan2));
+  color: #fff; padding: 10px 20px; border-radius: 8px;
+  text-decoration: none; font-weight: 600; font-size: 13px;
+  border: none; cursor: pointer; white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(6,182,212,0.35);
+  transition: transform .2s, box-shadow .2s;
+}
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(6,182,212,0.45); }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.85); padding: 10px 20px; border-radius: 8px;
+  text-decoration: none; font-weight: 600; font-size: 13px;
+  transition: background .2s;
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.14); }
 
-  .li-connect-btn {
-    display: inline-flex; align-items: center; gap: 7px;
-    background: #0a66c2; color: #fff;
-    padding: 9px 18px; border-radius: 6px;
-    text-decoration: none; font-weight: 600; font-size: 13px;
-    margin-top: 10px; transition: background .2s;
-  }
-  .li-connect-btn:hover { background: #004182; }
+/* ─── LAYOUT ──────────────────────────────────────── */
+.page-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 20px 40px;
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  gap: 24px;
+  align-items: start;
+}
 
-  .sidebar-section {
-    padding: 20px 24px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .sidebar-section:last-child { border-bottom: none; }
+/* ─── SIDEBAR ─────────────────────────────────────── */
+.sidebar {
+  display: flex; flex-direction: column; gap: 16px;
+  position: sticky; top: 24px;
+}
 
-  .sidebar-section h3 {
-    font-size: 11px; font-weight: 700; letter-spacing: 1.2px;
-    text-transform: uppercase; color: #4dd0e1; margin-bottom: 14px;
-  }
+.glass-card {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.9);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  overflow: hidden;
+  transition: box-shadow .2s;
+}
+.glass-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.11); }
 
-  .contact-item {
-    display: flex; align-items: center; gap: 10px;
-    font-size: 13px; color: #cbd5e0; margin-bottom: 10px;
-  }
-  .contact-item i { color: #4dd0e1; width: 16px; text-align: center; }
-  .contact-item a { color: #cbd5e0; text-decoration: none; }
-  .contact-item a:hover { color: #fff; }
+.sidebar-section {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.sidebar-section:last-child { border-bottom: none; }
 
-  .skill-tag {
-    display: inline-block; background: rgba(255,255,255,0.1);
-    color: #e2e8f0; font-size: 12px; padding: 4px 10px;
-    border-radius: 20px; margin: 3px 3px 3px 0;
-    border: 1px solid rgba(255,255,255,0.15);
-    transition: background .2s;
-  }
-  .skill-tag:hover { background: rgba(77,208,225,0.25); }
+.section-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--cyan2);
+  margin-bottom: 12px;
+  display: flex; align-items: center; gap: 6px;
+}
+.section-label::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(90deg, var(--cyan), transparent);
+}
 
-  .cert-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
-    align-items: center;
-  }
-  .cert-grid a, .cert-grid span { display: flex; justify-content: center; }
-  .cert-grid img { width: 80px; height: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); transition: transform .2s; }
-  .cert-grid img:hover { transform: scale(1.07); }
+/* LinkedIn badge wrapper */
+.badge-scale-wrap {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+.badge-scale-wrap .badge-base {
+  transform: scale(0.95);
+  transform-origin: top center;
+}
+.badge-base__link {
+  color: var(--text) !important;
+  font-weight: 800 !important;
+  font-size: 15px !important;
+  text-decoration: none !important;
+  display: block;
+  padding: 6px 0;
+}
 
-  /* ── Download button ── */
-  .download-btn {
-    display: flex; align-items: center; justify-content: center; gap: 8px;
-    background: linear-gradient(135deg, #00b4d8, #0077b6);
-    color: white; padding: 11px 20px; border: none;
-    border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600;
-    width: 100%; text-align: center; text-decoration: none;
-    transition: opacity .2s; margin-top: 4px;
-  }
-  .download-btn:hover { opacity: .88; }
+.contact-row {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: var(--muted);
+  margin-bottom: 9px;
+}
+.contact-row i {
+  width: 28px; height: 28px; border-radius: 7px;
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; color: #fff; flex-shrink: 0;
+}
+.contact-row a { color: var(--muted); text-decoration: none; }
+.contact-row a:hover { color: var(--cyan2); }
 
-  /* ── Main content ── */
-  .main { display: flex; flex-direction: column; gap: 20px; }
+.skill-wrap { display: flex; flex-wrap: wrap; gap: 6px; }
+.skill-tag {
+  background: linear-gradient(135deg, #eff6ff, #f0fdf9);
+  border: 1px solid #bfdbfe;
+  color: #1e40af;
+  font-size: 11.5px; font-weight: 600;
+  padding: 4px 10px; border-radius: 20px;
+  transition: all .2s;
+}
+.skill-tag:hover { background: linear-gradient(135deg, #dbeafe, #ccfbf1); border-color: var(--cyan); }
 
-  .card {
-    background: #fff; border-radius: 14px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-    overflow: hidden;
-  }
+.cert-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  align-items: center; justify-items: center;
+}
+.cert-grid a, .cert-grid span { display: flex; justify-content: center; align-items: center; }
+.cert-grid img {
+  width: 72px; height: auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
+  transition: transform .25s;
+}
+.cert-grid img:hover { transform: scale(1.1) rotate(-2deg); }
 
-  .card-header {
-    display: flex; align-items: center; gap: 12px;
-    padding: 18px 24px 14px;
-    border-bottom: 2px solid #f0f4f8;
-  }
-  .card-header .icon-wrap {
-    width: 42px; height: 42px; border-radius: 10px;
-    background: linear-gradient(135deg, #00b4d8, #0077b6);
-    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-  }
-  .card-header .icon-wrap i { color: #fff; font-size: 18px; }
-  .card-header h2 { font-size: 18px; font-weight: 700; color: #1a202c; }
+/* ─── MAIN ────────────────────────────────────────── */
+.main { display: flex; flex-direction: column; gap: 20px; }
 
-  .card-body { padding: 20px 24px; }
+.content-card {
+  background: var(--card);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: box-shadow .2s;
+}
+.content-card:hover { box-shadow: 0 6px 28px rgba(0,0,0,0.09); }
 
-  /* Summary */
-  .summary-text {
-    font-size: 14.5px; color: #4a5568; line-height: 1.75;
-    border-left: 4px solid #00b4d8; padding-left: 16px;
-  }
-  .summary-text strong { color: #1a202c; }
+.card-head {
+  display: flex; align-items: center; gap: 14px;
+  padding: 20px 26px 16px;
+  border-bottom: 2px solid var(--light);
+}
+.card-head-icon {
+  width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.card-head-icon.blue  { background: linear-gradient(135deg, #3b82f6, #1e40af); }
+.card-head-icon.cyan  { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+.card-head-icon.gold  { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.card-head-icon.purple{ background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+.card-head-icon i { color: #fff; font-size: 18px; }
+.card-head h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px; font-weight: 800; color: var(--text); letter-spacing: -0.2px;
+}
 
-  /* Highlight chips */
-  .highlights {
-    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;
-  }
-  .highlight-chip {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: #ebf8ff; color: #0077b6; font-size: 12px; font-weight: 600;
-    padding: 5px 12px; border-radius: 20px; border: 1px solid #bee3f8;
-  }
+.card-body { padding: 22px 26px; }
 
-  /* Timeline */
-  .timeline { position: relative; padding-left: 28px; }
-  .timeline::before {
-    content: ''; position: absolute; left: 8px; top: 6px; bottom: 0;
-    width: 2px; background: linear-gradient(to bottom, #00b4d8, #f0f4f8);
-    border-radius: 2px;
-  }
+/* Summary */
+.summary-text {
+  font-size: 14.5px; color: #475569; line-height: 1.8;
+  padding-left: 16px;
+  border-left: 3px solid var(--cyan);
+}
+.summary-text strong { color: var(--text); }
 
-  .job { position: relative; margin-bottom: 28px; }
-  .job:last-child { margin-bottom: 0; }
-  .job::before {
-    content: ''; position: absolute; left: -24px; top: 6px;
-    width: 12px; height: 12px; border-radius: 50%;
-    background: #00b4d8; border: 2px solid #fff;
-    box-shadow: 0 0 0 2px #00b4d8;
-  }
+.kpi-row {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+  margin-top: 20px;
+}
+.kpi {
+  background: linear-gradient(135deg, #f8faff, #f0fdf4);
+  border: 1px solid #e0e7ff;
+  border-radius: 12px; padding: 14px 12px; text-align: center;
+  transition: transform .2s;
+}
+.kpi:hover { transform: translateY(-2px); }
+.kpi-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px; font-weight: 800;
+  background: linear-gradient(135deg, var(--cyan2), var(--blue));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.kpi-label { font-size: 11px; font-weight: 600; color: var(--muted); margin-top: 2px; }
 
-  .job-header { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 8px; margin-bottom: 6px; }
-  .job-title { font-size: 16px; font-weight: 700; color: #1a202c; }
-  .job-date {
-    display: inline-flex; align-items: center; gap: 5px;
-    font-size: 12px; color: #718096; background: #f7fafc;
-    padding: 3px 10px; border-radius: 20px; border: 1px solid #e2e8f0;
-    white-space: nowrap;
-  }
-  .current-tag {
-    display: inline-block; background: #00b4d8; color: #fff;
-    font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 10px;
-  }
-  .client-tag {
-    display: inline-flex; align-items: center; gap: 5px;
-    background: #fef3c7; color: #92400e; font-size: 12px; font-weight: 600;
-    padding: 3px 10px; border-radius: 10px; border: 1px solid #fde68a;
-  }
+/* Timeline */
+.timeline { position: relative; padding-left: 30px; }
+.timeline::before {
+  content: ''; position: absolute; left: 10px; top: 8px; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--cyan), var(--border));
+}
 
-  .job-desc { font-size: 13.5px; color: #718096; margin: 6px 0 10px; font-style: italic; }
+.job { position: relative; margin-bottom: 30px; animation: fadeUp .4s ease both; }
+.job:last-child { margin-bottom: 0; }
 
-  .job ul { padding-left: 18px; margin: 6px 0 10px; }
-  .job ul li { font-size: 13.5px; color: #4a5568; margin-bottom: 4px; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
-  .tech-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-  .tech-pill {
-    font-size: 11px; background: #edf2f7; color: #4a5568;
-    padding: 3px 9px; border-radius: 10px; font-weight: 500;
-  }
+.job-dot {
+  position: absolute; left: -26px; top: 6px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 3px rgba(6,182,212,0.2);
+}
 
-  .job-divider { border: none; border-top: 1px dashed #e2e8f0; margin: 20px 0 20px 0; }
+.job-header {
+  display: flex; flex-wrap: wrap; align-items: flex-start;
+  gap: 8px; margin-bottom: 6px;
+}
+.job-title {
+  font-size: 15.5px; font-weight: 700; color: var(--text); flex: 1; min-width: 200px;
+}
+.date-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: var(--light); border: 1px solid var(--border);
+  color: var(--muted); font-size: 12px;
+  padding: 3px 10px; border-radius: 20px; white-space: nowrap;
+}
+.now-badge {
+  background: linear-gradient(90deg, var(--cyan), var(--cyan2));
+  color: #fff; font-size: 11px; font-weight: 700;
+  padding: 2px 8px; border-radius: 10px; margin-left: 4px;
+}
+.client-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #fffbeb; border: 1px solid #fde68a;
+  color: #92400e; font-size: 12px; font-weight: 600;
+  padding: 3px 10px; border-radius: 10px;
+}
+.role-badge {
+  background: linear-gradient(90deg, #1e40af, #1d4ed8);
+  color: #fff; font-size: 11px; font-weight: 700;
+  padding: 3px 10px; border-radius: 10px;
+}
 
-  /* Education */
-  .edu-item { display: flex; gap: 16px; align-items: flex-start; }
-  .edu-icon {
-    width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .edu-icon i { color: #fff; font-size: 18px; }
-  .edu-info h4 { font-size: 15px; font-weight: 700; color: #1a202c; }
-  .edu-info p { font-size: 13px; color: #718096; margin-top: 3px; }
+.job-desc {
+  font-size: 13.5px; color: var(--muted);
+  font-style: italic; margin: 6px 0 10px;
+}
 
-  /* Footer */
-  .page-footer {
-    background: linear-gradient(135deg, #0f2c4a, #0a5068);
-    color: rgba(255,255,255,0.7); text-align: center;
-    padding: 16px; font-size: 13px; margin-top: 8px;
-    border-radius: 10px; max-width: 1200px; margin: 0 auto 32px;
-  }
+.job ul { padding-left: 18px; margin: 6px 0 10px; }
+.job ul li { font-size: 13.5px; color: #475569; margin-bottom: 5px; }
 
-  /* ── Print ── */
-  @media print {
-    body { background: white; }
-    .page-wrap { grid-template-columns: 240px 1fr; gap: 16px; margin: 0; max-width: 100%; }
-    .sidebar { box-shadow: none; border: 1px solid #ddd; position: static; }
-    .download-btn, .no-print, .li-connect-btn { display: none !important; }
-    .card { box-shadow: none; border: 1px solid #e2e8f0; }
-    .page-footer { display: none; }
-  }
+.sub-project {
+  background: #f8faff; border: 1px solid #e0e7ff;
+  border-radius: 10px; padding: 12px 15px; margin-top: 10px;
+}
+.sub-project-title {
+  font-size: 13px; font-weight: 700; color: var(--text);
+  margin-bottom: 6px; display: flex; align-items: center; gap: 6px;
+}
+.sub-project-title::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold); flex-shrink: 0;
+}
 
-  /* ── Responsive ── */
-  @media (max-width: 768px) {
-    .page-wrap { grid-template-columns: 1fr; }
-    .sidebar { position: static; }
-    .cert-grid { grid-template-columns: repeat(4, 1fr); }
-  }
+.tech-row { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+.tech-pill {
+  background: #f1f5f9; border: 1px solid #e2e8f0;
+  color: #475569; font-size: 11.5px; font-weight: 500;
+  padding: 3px 9px; border-radius: 8px;
+  transition: all .15s;
+}
+.tech-pill:hover { background: #dbeafe; border-color: #bfdbfe; color: #1e40af; }
+
+.divider { border: none; border-top: 1px dashed #e2e8f0; margin: 22px 0; }
+
+/* Education */
+.edu-card {
+  display: flex; align-items: center; gap: 16px;
+  padding: 6px 0;
+}
+.edu-icon {
+  width: 50px; height: 50px; border-radius: 12px; flex-shrink: 0;
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  display: flex; align-items: center; justify-content: center;
+}
+.edu-icon i { color: #fff; font-size: 20px; }
+.edu-info h4 { font-size: 15px; font-weight: 700; color: var(--text); }
+.edu-info p  { font-size: 13px; color: var(--muted); margin-top: 3px; }
+
+/* Footer */
+.site-footer {
+  text-align: center; padding: 20px;
+  font-size: 13px; color: var(--muted);
+  border-top: 1px solid var(--border);
+  max-width: 1200px; margin: 0 auto 24px;
+}
+.site-footer a { color: var(--cyan2); text-decoration: none; }
+
+/* ─── PRINT ───────────────────────────────────────── */
+@media print {
+  .hero { background: #0f2c4a !important; -webkit-print-color-adjust: exact; }
+  .btn-primary, .btn-ghost, .no-print { display: none !important; }
+  .page-wrap { grid-template-columns: 240px 1fr; gap: 14px; }
+  .glass-card, .content-card { box-shadow: none; border: 1px solid #e2e8f0; }
+  .sidebar { position: static; }
+  .site-footer { display: none; }
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────── */
+@media (max-width: 800px) {
+  .hero-grid { flex-direction: column; text-align: center; }
+  .hero-actions { margin-left: 0; align-items: center; flex-direction: row; flex-wrap: wrap; justify-content: center; }
+  .hero-chips, .hero-meta { justify-content: center; }
+  .page-wrap { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+  .kpi-row { grid-template-columns: repeat(2,1fr); }
+}
 </style>
 </head>
 <body>
 
+<!-- ═══ HERO ═══ -->
+<header class="hero">
+  <div class="hero-grid">
+    <div class="hero-avatar"><i class="fas fa-user-tie"></i></div>
+    <div class="hero-text">
+      <h1>Surya Prabhakaran</h1>
+      <div class="title-pill">Chief / Principal Architect</div>
+      <div class="hero-meta">
+        <span><i class="fas fa-map-marker-alt"></i> Brussels, Belgium</span>
+        <span><i class="fas fa-envelope"></i> suryaprabhakaran@hotmail.com</span>
+        <span><i class="fas fa-phone"></i> +32 0499 69 82 66</span>
+      </div>
+      <div class="hero-chips">
+        <span class="hero-chip">TOGAF Certified</span>
+        <span class="hero-chip">AWS Solutions Architect</span>
+        <span class="hero-chip">14+ Years Experience</span>
+        <span class="hero-chip">ARB Chair</span>
+        <span class="hero-chip">Interim Chief Architect</span>
+      </div>
+    </div>
+    <div class="hero-actions no-print">
+      <button class="btn-primary" onclick="window.print()">
+        <i class="fas fa-file-pdf"></i> Download PDF
+      </button>
+      <a class="btn-ghost" href="https://be.linkedin.com/in/suryaprabhakaran" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ BODY ═══ -->
 <div class="page-wrap">
 
-  <!-- ═══ SIDEBAR ═══ -->
+  <!-- ── SIDEBAR ── -->
   <aside class="sidebar">
 
-    <!-- Profile Header -->
-    <div class="sidebar-top">
-      <div class="badge-scale-wrap">
-        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="HORIZONTAL" data-vanity="suryaprabhakaran" data-version="v1">
-          <a class="badge-base__link LI-simple-link" href="https://be.linkedin.com/in/suryaprabhakaran?trk=profile-badge">Surya Prabhakaran Lakshmanasamy</a>
+    <!-- LinkedIn Badge -->
+    <div class="glass-card">
+      <div class="sidebar-section">
+        <div class="section-label">LinkedIn</div>
+        <div class="badge-scale-wrap">
+          <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="suryaprabhakaran" data-version="v1">
+            <a class="badge-base__link LI-simple-link" href="https://be.linkedin.com/in/suryaprabhakaran?trk=profile-badge"><strong>Surya Prabhakaran Lakshmanasamy</strong></a>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Contact -->
-    <div class="sidebar-section">
-      <h3>Contact</h3>
-      <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Brussels, Belgium</div>
-      <div class="contact-item"><i class="fas fa-envelope"></i>
-        <a href="mailto:suryaprabhakaran@hotmail.com">suryaprabhakaran@hotmail.com</a>
+    <div class="glass-card">
+      <div class="sidebar-section">
+        <div class="section-label">Contact</div>
+        <div class="contact-row"><i class="fas fa-map-marker-alt"></i> Brussels, Belgium</div>
+        <div class="contact-row"><i class="fas fa-envelope"></i>
+          <a href="mailto:suryaprabhakaran@hotmail.com">suryaprabhakaran@hotmail.com</a>
+        </div>
+        <div class="contact-row"><i class="fas fa-phone"></i> +32 0499 69 82 66</div>
+        <div class="contact-row"><i class="fab fa-linkedin"></i>
+          <a href="https://be.linkedin.com/in/suryaprabhakaran" target="_blank">linkedin.com/in/suryaprabhakaran</a>
+        </div>
       </div>
-      <div class="contact-item"><i class="fas fa-phone"></i> +32 0499 69 82 66</div>
-      <button class="download-btn no-print" onclick="window.print()">
-        <i class="fas fa-file-pdf"></i> Download as PDF
-      </button>
     </div>
 
     <!-- Certifications -->
-    <div class="sidebar-section">
-      <h3>Certifications</h3>
-      <div class="cert-grid">
-        <a href="https://www.credly.com/badges/71dd7ed4-9ae4-419c-921b-191b46a502e2/public_url" target="_blank">
-          <img src="badge-togaf-version-9.2.png" alt="TOGAF 9.2">
-        </a>
-        <span>
-          <img src="SKILLCERTIFIED.OpenAPIs.svg" alt="Open APIs Certified">
-        </span>
-        <a href="https://www.credly.com/org/amazon-web-services/badge/aws-certified-solutions-architect-associate" target="_blank">
-          <img src="https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Solutions Architect Associate">
-        </a>
-        <a href="https://www.credential.net/e9d0e810-7f8e-42ce-bee9-75f0dbe904e6" target="_blank">
-          <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/42636085" alt="Blockchain Architect">
-        </a>
+    <div class="glass-card">
+      <div class="sidebar-section">
+        <div class="section-label">Certifications</div>
+        <div class="cert-grid">
+          <a href="https://www.credly.com/badges/71dd7ed4-9ae4-419c-921b-191b46a502e2/public_url" target="_blank">
+            <img src="badge-togaf-version-9.2.png" alt="TOGAF 9.2">
+          </a>
+          <span><img src="SKILLCERTIFIED.OpenAPIs.svg" alt="Open APIs"></span>
+          <a href="https://www.credly.com/org/amazon-web-services/badge/aws-certified-solutions-architect-associate" target="_blank">
+            <img src="https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS SA Associate">
+          </a>
+          <a href="https://www.credential.net/e9d0e810-7f8e-42ce-bee9-75f0dbe904e6" target="_blank">
+            <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/42636085" alt="Blockchain Architect">
+          </a>
+        </div>
       </div>
     </div>
 
-    <!-- Core Skills -->
-    <div class="sidebar-section">
-      <h3>Core Competencies</h3>
-      <div>
-        <span class="skill-tag">Enterprise Architecture</span>
-        <span class="skill-tag">Architecture Governance</span>
-        <span class="skill-tag">ARB Leadership</span>
-        <span class="skill-tag">Cloud Architecture</span>
-        <span class="skill-tag">Azure</span>
-        <span class="skill-tag">AWS</span>
-        <span class="skill-tag">Digital Transformation</span>
-        <span class="skill-tag">Platform Engineering</span>
-        <span class="skill-tag">Microservices</span>
-        <span class="skill-tag">API Design</span>
-        <span class="skill-tag">DevSecOps</span>
-        <span class="skill-tag">TOGAF</span>
-        <span class="skill-tag">Stakeholder Management</span>
-        <span class="skill-tag">Engineering Leadership</span>
-        <span class="skill-tag">AI &amp; Automation</span>
-        <span class="skill-tag">Agile / Scrum</span>
+    <!-- Skills -->
+    <div class="glass-card">
+      <div class="sidebar-section">
+        <div class="section-label">Core Competencies</div>
+        <div class="skill-wrap">
+          <span class="skill-tag">Enterprise Architecture</span>
+          <span class="skill-tag">Architecture Governance</span>
+          <span class="skill-tag">ARB Leadership</span>
+          <span class="skill-tag">Cloud Architecture</span>
+          <span class="skill-tag">Azure</span>
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">Digital Transformation</span>
+          <span class="skill-tag">Platform Engineering</span>
+          <span class="skill-tag">Microservices</span>
+          <span class="skill-tag">API Design</span>
+          <span class="skill-tag">DevSecOps</span>
+          <span class="skill-tag">TOGAF</span>
+          <span class="skill-tag">Stakeholder Management</span>
+          <span class="skill-tag">Engineering Leadership</span>
+          <span class="skill-tag">AI &amp; Automation</span>
+          <span class="skill-tag">Agile / Scrum</span>
+        </div>
       </div>
-    </div>
-
-    <!-- Languages -->
-    <div class="sidebar-section">
-      <h3>Languages</h3>
-      <div>
-        <span class="skill-tag">English</span>
-        <span class="skill-tag">Tamil</span>
+      <div class="sidebar-section">
+        <div class="section-label">Languages</div>
+        <div class="skill-wrap">
+          <span class="skill-tag">English</span>
+          <span class="skill-tag">Tamil</span>
+        </div>
       </div>
     </div>
 
   </aside>
 
-  <!-- ═══ MAIN ═══ -->
+  <!-- ── MAIN ── -->
   <main class="main">
 
-    <!-- Professional Summary -->
-    <div class="card">
-      <div class="card-header">
-        <div class="icon-wrap"><i class="fas fa-user-tie"></i></div>
+    <!-- Summary -->
+    <div class="content-card">
+      <div class="card-head">
+        <div class="card-head-icon cyan"><i class="fas fa-user-tie"></i></div>
         <h2>Professional Summary</h2>
       </div>
       <div class="card-body">
         <p class="summary-text">
-          Principal Architect with <strong>14+ years</strong> of experience leading large-scale digital transformation and engineering initiatives across telecom, insurance, and EU institutions. Proven track record in defining <strong>group-wide architecture vision</strong>, governance frameworks, and engineering standards in complex, federated environments. Experienced in chairing <strong>Architecture Review Boards</strong>, serving as <strong>Interim Chief Architect</strong> for enterprise-wide programmes, and aligning central and distributed IT organisations. Strong command of <strong>TOGAF, Azure, AWS, microservices, API ecosystems, and DevSecOps</strong>. Recognised for influencing C-suite stakeholders and driving cross-organisational alignment in multi-entity environments.
+          Principal Architect with <strong>14+ years</strong> leading large-scale digital transformation and engineering initiatives across telecom, insurance, and EU institutions. Proven track record defining <strong>group-wide architecture vision</strong>, governance frameworks, and engineering standards in complex, federated environments. Experienced chairing <strong>Architecture Review Boards</strong>, serving as <strong>Interim Chief Architect</strong>, and aligning central and distributed IT organisations. Deep command of <strong>TOGAF, Azure, AWS, microservices, API ecosystems, and DevSecOps</strong>. Recognised for influencing C-suite stakeholders and driving cross-organisational alignment in multi-entity environments.
         </p>
-        <div class="highlights">
-          <span class="highlight-chip"><i class="fas fa-award"></i> 14+ Years Experience</span>
-          <span class="highlight-chip"><i class="fas fa-shield-alt"></i> Interim Chief Architect</span>
-          <span class="highlight-chip"><i class="fas fa-sitemap"></i> ARB Chair</span>
-          <span class="highlight-chip"><i class="fas fa-cloud"></i> Cloud Transformation</span>
-          <span class="highlight-chip"><i class="fas fa-users"></i> Cross-org Governance</span>
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-num">14+</div><div class="kpi-label">Years Experience</div></div>
+          <div class="kpi"><div class="kpi-num">20+</div><div class="kpi-label">Technical Designs</div></div>
+          <div class="kpi"><div class="kpi-num">100+</div><div class="kpi-label">Processes Migrated</div></div>
+          <div class="kpi"><div class="kpi-num">4+</div><div class="kpi-label">Industries</div></div>
         </div>
       </div>
     </div>
 
-    <!-- Work Experience -->
-    <div class="card">
-      <div class="card-header">
-        <div class="icon-wrap"><i class="fas fa-briefcase"></i></div>
+    <!-- Experience -->
+    <div class="content-card">
+      <div class="card-head">
+        <div class="card-head-icon blue"><i class="fas fa-briefcase"></i></div>
         <h2>Work Experience</h2>
       </div>
       <div class="card-body">
@@ -398,11 +581,12 @@
 
           <!-- Barco -->
           <div class="job">
+            <div class="job-dot"></div>
             <div class="job-header">
               <span class="job-title">Software Architect – Barco, Belgium</span>
-              <span class="job-date"><i class="fas fa-calendar-alt"></i> April 2025 – <span class="current-tag">Present</span></span>
+              <span class="date-badge"><i class="fas fa-calendar-alt"></i> Apr 2025 <span class="now-badge">Present</span></span>
             </div>
-            <p class="job-desc">Driving software and platform architecture for scalable, high-performance digital solutions, aligning engineering practices with enterprise architecture standards.</p>
+            <p class="job-desc">Driving software and platform architecture for scalable, high-performance digital solutions.</p>
             <ul>
               <li>Defined engineering standards and architecture patterns for scalable digital platforms</li>
               <li>Designed cloud-native and microservices-based architectures ensuring performance and resilience</li>
@@ -412,66 +596,62 @@
             </ul>
           </div>
 
-          <hr class="job-divider">
+          <hr class="divider">
 
           <!-- Deloitte -->
           <div class="job">
+            <div class="job-dot"></div>
             <div class="job-header">
               <span class="job-title">Manager – Deloitte, Brussels</span>
-              <span class="job-date"><i class="fas fa-calendar-alt"></i> Oct 2024 – Mar 2025</span>
+              <span class="date-badge"><i class="fas fa-calendar-alt"></i> Oct 2024 – Mar 2025</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:8px;">
+              <span class="client-badge"><i class="fas fa-building"></i> Ageas Corporate Center</span>
+              <span class="role-badge">Interim Chief Architect</span>
+            </div>
+            <p class="job-desc">Led enterprise architecture and governance for a complex multi-entity insurance environment.</p>
+            <ul>
+              <li>Defined enterprise-wide architecture vision, standards, and principles across business and IT domains</li>
+              <li>Chaired Architecture Review Board (ARB) — final authority for all architectural decisions</li>
+              <li>Established governance model aligning central and domain-level architecture practices</li>
+              <li>Translated strategy into Azure-based engineering frameworks and reusable patterns</li>
+              <li>Oversaw Solvency II transformation, ensuring scalability, compliance, and consistency</li>
+              <li>Partnered with C-suite (business, risk, compliance) to align IT investments with strategy</li>
+            </ul>
+            <div class="tech-row">
+              <span class="tech-pill">LeanIX</span><span class="tech-pill">Azure</span><span class="tech-pill">Dynatrace</span><span class="tech-pill">Mendix</span>
             </div>
 
-            <div style="margin-bottom:14px;">
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap;">
-                <span class="client-tag"><i class="fas fa-building"></i> Ageas Corporate Center</span>
-                <span style="display:inline-block;background:#0077b6;color:#fff;font-size:11px;font-weight:700;padding:2px 9px;border-radius:10px;">Interim Chief Architect</span>
-              </div>
-              <p class="job-desc">Led enterprise architecture and engineering governance for a complex, multi-entity insurance environment.</p>
+            <div class="sub-project">
+              <div class="sub-project-title">Enterprise &amp; Cloud Architecture (Deloitte Internal)</div>
               <ul>
-                <li>Defined enterprise-wide architecture vision, standards, and principles across business and IT domains</li>
-                <li>Chaired Architecture Review Board (ARB), acting as final authority for all architectural decisions</li>
-                <li>Established architecture governance model aligning central and domain-level practices</li>
-                <li>Translated strategy into Azure-based engineering frameworks and reusable patterns</li>
-                <li>Provided architectural oversight for Solvency II transformation, ensuring scalability and compliance</li>
-                <li>Partnered with senior stakeholders (business, risk, compliance) to align IT investments with strategy</li>
-              </ul>
-              <div class="tech-row">
-                <span class="tech-pill">LeanIX</span><span class="tech-pill">Azure</span><span class="tech-pill">Dynatrace</span><span class="tech-pill">Mendix</span>
-              </div>
-            </div>
-
-            <div style="background:#f7fafc;border-radius:8px;padding:12px 14px;margin-top:10px;">
-              <p style="font-size:13px;font-weight:600;color:#2d3748;margin-bottom:6px;">Project: Enterprise &amp; Cloud Architecture (Deloitte Internal)</p>
-              <ul>
-                <li>Led design and implementation of enterprise cloud architectures for large-scale digital transformations</li>
-                <li>Defined IT transformation roadmaps, improving technology agility and reducing operational costs</li>
+                <li>Led cloud architecture design for large-scale digital transformation programmes</li>
+                <li>Defined IT transformation roadmaps improving agility and reducing operational costs</li>
                 <li>Managed and mentored cross-functional teams of 10+ engineers and consultants</li>
-                <li>Delivered conferences and knowledge-sharing sessions on cloud architecture and API standardisation</li>
               </ul>
-              <div class="tech-row">
-                <span class="tech-pill">AWS</span><span class="tech-pill">Azure</span><span class="tech-pill">VDI</span>
-              </div>
+              <div class="tech-row"><span class="tech-pill">AWS</span><span class="tech-pill">Azure</span><span class="tech-pill">VDI</span></div>
             </div>
           </div>
 
-          <hr class="job-divider">
+          <hr class="divider">
 
           <!-- Nish Tech -->
           <div class="job">
+            <div class="job-dot"></div>
             <div class="job-header">
               <span class="job-title">Enterprise Architect – Nish Tech, Brussels</span>
-              <span class="job-date"><i class="fas fa-calendar-alt"></i> Mar 2023 – Sep 2024</span>
+              <span class="date-badge"><i class="fas fa-calendar-alt"></i> Mar 2023 – Sep 2024</span>
             </div>
-            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap;">
-              <span class="client-tag"><i class="fas fa-landmark"></i> DiGIT – European Commission</span>
+            <div style="margin-bottom:8px;">
+              <span class="client-badge"><i class="fas fa-landmark"></i> DiGIT – European Commission</span>
             </div>
-            <p class="job-desc">Designed and blueprinted cloud-native solutions within a federated, multi-organisation EU environment for AWS and Red Hat OpenShift.</p>
+            <p class="job-desc">Designed cloud-native solutions in a federated multi-organisation EU environment on AWS and OpenShift.</p>
             <ul>
-              <li>Designed architecture PoCs and components leveraging building blocks for scalability, performance, and security</li>
-              <li>Continuously researched emerging technologies and proposed changes aligned with Digital First Strategy</li>
-              <li>Coordinated with the Architecture Office and development teams to implement technical architecture</li>
+              <li>Designed architecture PoCs leveraging building blocks for scalability, performance, and security</li>
+              <li>Researched emerging technologies aligned with Digital First Strategy</li>
+              <li>Coordinated architecture implementation with the Architecture Office and development teams</li>
               <li>Conducted business workshops and built target-state (To-Be) roadmaps</li>
-              <li>Mentored developers and coordinated with central architecture office for cross-domain governance</li>
+              <li>Mentored developers; coordinated cross-domain governance with central architecture office</li>
             </ul>
             <div class="tech-row">
               <span class="tech-pill">Kafka</span><span class="tech-pill">WSO2</span><span class="tech-pill">Camunda</span>
@@ -480,49 +660,48 @@
             </div>
           </div>
 
-          <hr class="job-divider">
+          <hr class="divider">
 
           <!-- Verizon -->
           <div class="job">
+            <div class="job-dot"></div>
             <div class="job-header">
               <span class="job-title">Enterprise Architect – Verizon Data Services India, Hyderabad</span>
-              <span class="job-date"><i class="fas fa-calendar-alt"></i> Jun 2011 – Mar 2023</span>
+              <span class="date-badge"><i class="fas fa-calendar-alt"></i> Jun 2011 – Mar 2023</span>
             </div>
 
-            <div style="margin-bottom:12px;">
-              <p style="font-size:13px;font-weight:600;color:#2d3748;margin-bottom:4px;">Service Assurance in ServiceNow</p>
-              <p class="job-desc" style="margin-top:0;">Migration of 100+ complex in-house Service Assurance business processes into ServiceNow.</p>
+            <div class="sub-project">
+              <div class="sub-project-title">Service Assurance in ServiceNow</div>
+              <p class="job-desc" style="margin-top:0;margin-bottom:6px;">Migration of 100+ complex in-house Service Assurance processes into ServiceNow.</p>
               <ul>
                 <li>Led design &amp; implementation across ServiceNow modules (ITSM, ITBM, ITOM, CSM, TSM, OMT)</li>
-                <li>Architected integrations using LDAP, SSO, Mid Server, Web Services, and in-house applications</li>
+                <li>Architected integrations using LDAP, SSO, Mid Server, Web Services</li>
               </ul>
             </div>
 
-            <div style="background:#f7fafc;border-radius:8px;padding:12px 14px;margin-bottom:12px;">
-              <p style="font-size:13px;font-weight:600;color:#2d3748;margin-bottom:4px;">E2E Enterprise Architecture for Enterprise Solutions</p>
+            <div class="sub-project" style="margin-top:10px;">
+              <div class="sub-project-title">E2E Enterprise Architecture for Enterprise Solutions</div>
               <ul>
-                <li>Executed 20+ technical designs and coordinated with 4+ business divisions for global application deployments</li>
-                <li>Coached and mentored SMEs across 8+ critical BSS/OSS domains</li>
+                <li>Executed 20+ technical designs coordinating with 4+ business divisions globally</li>
                 <li>Defined API Strategy aligned to TM Forum Open API and MEF standards (APIGEE, WSO2)</li>
-                <li>Applied enterprise architecture modelling using UML, ArchiMate, and ARIS</li>
+                <li>Coached and mentored SMEs across 8+ critical BSS/OSS domains</li>
+                <li>Applied enterprise architecture modelling with UML, ArchiMate, and ARIS</li>
               </ul>
               <div class="tech-row">
                 <span class="tech-pill">Java</span><span class="tech-pill">Spring Boot</span><span class="tech-pill">APIGEE</span>
-                <span class="tech-pill">AWS</span><span class="tech-pill">OCI</span><span class="tech-pill">Azure</span>
-                <span class="tech-pill">ArchiMate</span><span class="tech-pill">UML</span>
+                <span class="tech-pill">AWS</span><span class="tech-pill">OCI</span><span class="tech-pill">Azure</span><span class="tech-pill">ArchiMate</span>
               </div>
             </div>
 
-            <div style="background:#f7fafc;border-radius:8px;padding:12px 14px;">
-              <p style="font-size:13px;font-weight:600;color:#2d3748;margin-bottom:4px;">IntradaPro Web</p>
+            <div class="sub-project" style="margin-top:10px;">
+              <div class="sub-project-title">IntradaPro Web</div>
               <ul>
-                <li>Led team of 10 developers to migrate legacy Swing desktop app to Angular web application</li>
-                <li>Designed and implemented SOAP/REST APIs with Kubernetes and Docker</li>
-                <li>Built CI/CD pipelines using DevSecOps; maintained 99.999% HA on AWS infrastructure</li>
+                <li>Led 10-person team migrating legacy Swing desktop app to Angular web application</li>
+                <li>Built CI/CD pipelines using DevSecOps; maintained 99.999% HA on AWS</li>
               </ul>
               <div class="tech-row">
                 <span class="tech-pill">Angular</span><span class="tech-pill">Docker</span><span class="tech-pill">Jenkins</span>
-                <span class="tech-pill">NewRelic</span><span class="tech-pill">Cassandra</span><span class="tech-pill">MongoDB</span>
+                <span class="tech-pill">Cassandra</span><span class="tech-pill">MongoDB</span>
               </div>
             </div>
           </div>
@@ -532,13 +711,13 @@
     </div>
 
     <!-- Education -->
-    <div class="card">
-      <div class="card-header">
-        <div class="icon-wrap" style="background:linear-gradient(135deg,#667eea,#764ba2)"><i class="fas fa-graduation-cap"></i></div>
+    <div class="content-card">
+      <div class="card-head">
+        <div class="card-head-icon purple"><i class="fas fa-graduation-cap"></i></div>
         <h2>Education</h2>
       </div>
       <div class="card-body">
-        <div class="edu-item">
+        <div class="edu-card">
           <div class="edu-icon"><i class="fas fa-university"></i></div>
           <div class="edu-info">
             <h4>Maharaja Prithvi Engineering College</h4>
@@ -551,10 +730,10 @@
   </main>
 </div>
 
-<div class="page-footer no-print">
-  Surya Prabhakaran &mdash; Chief / Principal Architect &mdash; Brussels, Belgium &mdash;
-  <a href="https://be.linkedin.com/in/suryaprabhakaran" target="_blank" style="color:rgba(255,255,255,0.85);">LinkedIn</a>
-</div>
+<footer class="site-footer no-print">
+  Surya Prabhakaran &mdash; Chief / Principal Architect &mdash; Brussels &mdash;
+  <a href="https://be.linkedin.com/in/suryaprabhakaran" target="_blank">LinkedIn</a>
+</footer>
 
 </body>
 </html>
