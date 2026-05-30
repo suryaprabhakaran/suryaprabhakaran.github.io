@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Surya Prabhakaran</title>
+<title>Surya Prabhakaran – Chief Architect</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -8,198 +8,277 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Futura", sans-serif}
-.container {
-  position: relative;
-  width: 50%;
-}
 
-.image {
-  opacity: 1;
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
-}
-
-.middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.container:hover .image {
-  opacity: 0.3;
-}
-
-.container:hover .middle {
-  opacity: 1;
-}
-
-.text {
-  background-color: #04AA6D;
+.download-btn {
+  display: inline-block;
+  background-color: #009688;
   color: white;
-  font-size: 16px;
-  padding: 16px 32px;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 12px 0 4px 0;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+.download-btn:hover { background-color: #00796b; color: white; }
+
+.summary-box {
+  background: #e0f2f1;
+  border-left: 4px solid #009688;
+  padding: 14px 16px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
+.role-tag {
+  display: inline-block;
+  background: #009688;
+  color: white;
+  font-size: 12px;
+  padding: 2px 9px;
+  border-radius: 10px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+@media print {
+  .download-btn, .no-print { display: none !important; }
+  body { background: white !important; }
+  .w3-card-4, .w3-card { box-shadow: none !important; border: 1px solid #ddd; }
+  .w3-content { max-width: 100% !important; }
+}
 </style>
 <body class="w3-light-grey">
 <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
 <!-- Page Container -->
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
+<div class="w3-content w3-margin-top" style="max-width:1400px;" id="resume-content">
 
-    <!-- The Grid -->
-    <div class="w3-row-padding">
+  <!-- The Grid -->
+  <div class="w3-row-padding">
 
-        <!-- Left Column -->
-        <div class="w3-third">
+    <!-- Left Column -->
+    <div class="w3-third">
 
-            <div class="w3-white w3-text-grey w3-card-4">
-                <div class="w3-container w3-margin-left w3-margin-right w3-padding" >
-                    <p></p>
-                    <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="suryaprabhakaran" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://be.linkedin.com/in/suryaprabhakaran?trk=profile-badge">           </a></div>
-                    <hr>
-                </div>
-                <div class="w3-container w3-margin-left w3-margin-right">
-                    <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Enterprise Architect</p>
-                    <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Brussels, Belgium</p>
-                    <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>suryaprabhakaran@hotmail.com</p>
-                    <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>+32 0499 69 82 66</p>
-                    <hr>
-
-                    <div class="w3-display-container">
-                        <a href="https://www.credly.com/badges/71dd7ed4-9ae4-419c-921b-191b46a502e2/public_url">
-                            <img class="w3-padding" src="badge-togaf-version-9.2.png" style="width:47%" alt="Avatar"></a>
-                        <img class="w3-padding" src="SKILLCERTIFIED.OpenAPIs.svg" style="width:49%" alt="Avatar" >
-                        <img class="w3-padding" src="Career Journey Badge_Admin_Default2.svg" style="width:44%" alt="Avatar">
-                        <a href="https://www.credential.net/e9d0e810-7f8e-42ce-bee9-75f0dbe904e6">
-                           <img class="w3-padding" src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/42636085" style="width:50%" alt="Avatar">
-                        </a>
-                        <hr>
-                    </div>
-                    <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
-                    <ul>
-                        <li><h4>Enterprise Architecture</h4></li>
-                        <li><h4>Cloud Architecture</h4></li>
-                        <li><h4>Solution Architecture</h4></li>
-                        <li><h4>Integration Architecture</h4></li>
-                        <li><h4>Software Development</h4></li>
-                        <li><h4>Artificial Intelligence</h4></li>
-                        <li><h4>Requirement Analysis</h4></li>
-                        <li><h4>Agile Methodologies</h4></li>
-                        <li><h4>TOGAF</h4></li>
-                        <li><h4>DevSecOps</h4></li>
-                        <li><h4>Microservices</h4></li>
-                        <li><h4>Digital Transformation</h4></li>
-                        <li><h4>Stakeholder Management</h4></li>
-
-                    </ul>
-
-                    <br>
-                    <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
-                    <ul>
-                        <li><h4>English</h4></li>
-                        <li><h4>Tamil</h4></li>
-                    </ul>
-                    <br>
-                </div>
-            </div><br>
-
-            <!-- End Left Column -->
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-container w3-margin-left w3-margin-right w3-padding">
+          <p></p>
+          <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="suryaprabhakaran" data-version="v1">
+            <a class="badge-base__link LI-simple-link" href="https://be.linkedin.com/in/suryaprabhakaran?trk=profile-badge"> </a>
+          </div>
+          <hr>
         </div>
 
-        <!-- Right Column -->
-        <div class="w3-twothird">
+        <div class="w3-container w3-margin-left w3-margin-right">
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i><strong>Chief / Principal Architect</strong></p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Brussels, Belgium</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>suryaprabhakaran@hotmail.com</p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>+32 0499 69 82 66</p>
 
-            <div class="w3-container w3-card w3-white w3-margin-bottom">
-                <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
-                <div class="w3-container">
-                    <h5 class="w3-opacity"><b>Enterprise Architect, Nish Tech, Brussels</b></h5>
-                    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>March 2023 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
-                    <p><b>Project Name :</b> DIGIT - European Commission </p>
-                    <p><b>Description    :</b> Designing, Supporting, and blueprinting of Cloud native solutions for both AWS and Redhat OpenShift. Leading the process of integrating IT systems, review of the architecture of existing enterprise systems like Workflow Automation, Events Processing, API Gateway, etc.
-                        <p><b>Responsibilities:</b></p>
-                            <ul>
-                                <li>Working on the Design and development of architecture PoC, components, and leveraging the use of building blocks.</li>
-                                <li>Continuously researching emerging technologies and proposing changes to the current architecture aligned with DIGIT’s Digital Strategy. </li>
-                                <li>Coordinating the implementation of the technical architecture with the Architecture Office and the development team, favoring a collaborative approach.</li>
-                                <li>Producing and reviewing Technical Documents including Architecture Overviews.</li>
-                                <li>Active participation in standard Agile ceremonies. Mentored developers in the team by providing feedback/support to the technical tasks that must be implemented.</li>
-                                <li>Migrating 10+ Complex Workflows from in-house systems into ServiceNow.</li>
-                            </ul>
-                        <p><b>Technologies / Tools Used: </b></p><p>Kafka, WSO2, Camunda, ServiceNow, OpenShift FaaS (KNative), AWS Lambda, Docker, Kubernetes </p>
-                    <hr>
-                </div>
-                <div class="w3-container">
-                    <h5 class="w3-opacity"><b>Enterprise Architect, Verizon Data Services India, Hyderabad</b></h5>
-                        <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2011 - March 2023</h6>
-                    <p><b>Project Name :</b> Service Assurance in ServiceNow </p>
-                    <p><b>Description    :</b> Migration of 100+ Complex in-house Service Assurance processes into ServiceNow  </p>
-                    <p><b>Responsibilities:</b></p>
-                    <ul>
-                        <li>Leading designs & implementation of Implementation experience on various ServiceNow modules (ITSM, ITBM, ITOM, CSM, TSM, OMT, etc.). </li>
-                        <li>Implemented end-to-end product architecture to ensure scalable, high-performance landscape Architect integrations with ServiceNow using LDAP, Single Sign-on, Mid server, Web-services, Email, and several in-house applications and technologies </li>
-                    </ul>
-                    <p><b>Technologies / Tools Used: </b></p>
-                    <p>Kafka, ServiceNow </p>
-                    <hr>
-                </div>
-                <div class="w3-container">
-                    <p><b>Project Name :</b> E2E Enterprise Architect for Enterprise Solutions  </p>
-                    <p><b>Description    :</b> Execute 20+ technical designs & architectural leadership, and coordinate with 4+ business divisions to assure technical compliance for business needs. Evaluate and streamline technical guidance and assist in the deployment of 7+ complex applications in computing environments globally. </p>
-                    <p><b>Responsibilities:</b></p>
-                    <ul>
-                        <li>Coach and mentor subject-matter experts in 8+ critical areas such as BSS (Product definition, Product Catalog, Order Management, CRM, Pricing) / OSS (Network infrastructure design, transport, core networks, etc.) </li>
-                        <li>Collaborate with development teams to introduce innovative technologies following successful POC by defining the standard, directing the tech stack, and driving decisions</li>
-                        <li>Facilitate the governance and use of enterprise architecture principles, and guidance architectures </li>
-                        <li>Define API Strategy across domains and has built 10% of our domain APIs as per standards like TM Forum Open APIs, MEF, etc. (using API Gateways like APIGEE and WSO2) </li>
-                        <li>Assist Enterprise Architecture modeling, development tools, and techniques including UML, ArchiMate,ARIS etc. </li>
-                    </ul>
-                    <p><b>Technologies / Tools Used: </b></p>
-                    <p>Java, Spring boot, React, APIGEE, AWS, OCI, Azure, PCF, Open API, UML, ArchiMate, JIRA </p>
-                    <hr>
-                </div>
-                <div class="w3-container">
-                    <p><b>Project Name :</b> IntradaPro Web  </p>
-                    <p><b>Description    :</b> Modernizing legacy Swing based Desktop Enterprise Order Management application into an Angular based Web application</p>
-                    <p><b>Responsibilities:</b></p>
-                    <ul>
-                        <li>Coach and mentor subject Headed the migration of existing Swings-based desktop application to an Angular based Web application</li>
-                        <li>Translated business requirements into technical specifications, designed prototype modules, and coordinated with junior developers to implement the solution.</li>
-                        <li>Led a team of 10 developers to implement a business-critical order management system, focusing on information gathering and translating to technical specifications. </li>
-                        <li>Designed and implemented SOAP / REST APIs with Kubernetes and Docker for interface-level communication and supported the team in developing CI\CD Pipeline using DevSecOps & maintained systems in high availability (99.999) in AWS Cloud infrastructure </li>
-                    </ul>
-                    <p><b>Technologies / Tools Used: </b></p>
-                    <p>Java, Spring boot, Angular, Rest APIs, Jenkins, Docker, NewRelic, Blackduck, 42Crunch, APIGEE, SQL, Cassandra, GIT, Swings, Unix, Shell Scripting, MongoDB, Struts  </p>
-                </div>
-            </div>
+          <button class="download-btn no-print" onclick="window.print()">
+            <i class="fa fa-download" style="margin-right:7px;"></i>Download Resume (PDF)
+          </button>
+          <p style="font-size:11px;color:#888;margin-top:2px;" class="no-print">Use "Save as PDF" in the print dialog</p>
 
-            <div class="w3-container w3-card w3-white">
-                <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
-                <div class="w3-container">
-                    <h5 class="w3-opacity"><b>Maharaja Prithvi Engineering College </b></h5>
-                    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2007-2011</h6>
-                    <p>Bachelor of Engineering (B.E) - Electrical and Electronics</p>
-                </div>
-            </div>
+          <hr>
 
-            <!-- End Right Column -->
+          <div class="w3-display-container">
+            <a href="https://www.credly.com/badges/71dd7ed4-9ae4-419c-921b-191b46a502e2/public_url">
+              <img class="w3-padding" src="badge-togaf-version-9.2.png" style="width:47%" alt="TOGAF 9.2">
+            </a>
+            <img class="w3-padding" src="SKILLCERTIFIED.OpenAPIs.svg" style="width:49%" alt="Open APIs Certified">
+            <img class="w3-padding" src="Career Journey Badge_Admin_Default2.svg" style="width:44%" alt="Career Badge">
+            <a href="https://www.credential.net/e9d0e810-7f8e-42ce-bee9-75f0dbe904e6">
+              <img class="w3-padding" src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/42636085" style="width:50%" alt="Credential Badge">
+            </a>
+            <hr>
+          </div>
+
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Core Competencies</b></p>
+          <ul>
+            <li><h4>Enterprise Architecture</h4></li>
+            <li><h4>Architecture Governance (ARB)</h4></li>
+            <li><h4>Cloud Architecture (Azure, AWS)</h4></li>
+            <li><h4>Digital Transformation</h4></li>
+            <li><h4>Platform Engineering</h4></li>
+            <li><h4>Solution &amp; Integration Architecture</h4></li>
+            <li><h4>Microservices &amp; API Design</h4></li>
+            <li><h4>DevSecOps</h4></li>
+            <li><h4>TOGAF</h4></li>
+            <li><h4>Stakeholder Management</h4></li>
+            <li><h4>Engineering Leadership</h4></li>
+            <li><h4>Artificial Intelligence</h4></li>
+            <li><h4>Agile Methodologies</h4></li>
+          </ul>
+
+          <br>
+          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
+          <ul>
+            <li><h4>English</h4></li>
+            <li><h4>Tamil</h4></li>
+          </ul>
+          <br>
         </div>
+      </div><br>
 
-        <!-- End Grid -->
     </div>
+    <!-- End Left Column -->
 
-    <!-- End Page Container -->
+    <!-- Right Column -->
+    <div class="w3-twothird">
+
+      <!-- Summary -->
+      <div class="w3-container w3-card w3-white w3-margin-bottom" style="padding-bottom:16px;">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-user fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Professional Summary</h2>
+        <div class="w3-container">
+          <div class="summary-box">
+            Principal Architect with <strong>14+ years</strong> of experience leading large-scale digital transformation and engineering initiatives across telecom, insurance, and EU institutions. Proven track record in defining group-wide architecture vision, governance frameworks, and engineering standards in complex, federated environments. Deep expertise in <strong>aligning central and distributed IT organisations</strong>, reducing fragmentation, and driving platform-based transformation. Experienced in chairing <strong>Architecture Review Boards</strong>, serving as <strong>Interim Chief Architect</strong> for enterprise-wide programmes, and translating architectural strategy into scalable engineering frameworks. Strong command of <strong>TOGAF, Azure, AWS, microservices, API ecosystems, and DevSecOps</strong>. Recognized for influencing senior stakeholders and driving cross-organizational alignment in multi-entity environments.
+          </div>
+        </div>
+      </div>
+
+      <!-- Work Experience -->
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
+
+        <!-- Barco -->
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Software Architect – Barco, Belgium</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>April 2025 – <span class="w3-tag w3-teal w3-round">Present</span></h6>
+          <p>Driving software and platform architecture initiatives for scalable, high-performance digital solutions, aligning engineering practices with enterprise architecture standards.</p>
+          <p><b>Key Responsibilities:</b></p>
+          <ul>
+            <li>Defined engineering standards and architecture patterns for scalable digital platforms</li>
+            <li>Designed cloud-native and microservices-based architectures ensuring performance and resilience</li>
+            <li>Promoted DevOps, automation, and secure-by-design practices across engineering teams</li>
+            <li>Enabled reuse of components and shared services, reducing duplication and improving efficiency</li>
+            <li>Collaborated across teams to align product engineering with enterprise architecture strategy</li>
+            <li>Contributed to platform consolidation and simplification initiatives</li>
+          </ul>
+          <hr>
+        </div>
+
+        <!-- Deloitte -->
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Manager – Deloitte, Brussels</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>October 2024 – March 2025</h6>
+
+          <p><b>Client:</b> Ageas Corporate Center, Brussels &nbsp;<span class="role-tag">Interim Chief Architect</span></p>
+          <p>Led enterprise architecture and engineering governance for a complex, multi-entity insurance environment, ensuring alignment between central IT strategy and distributed business units.</p>
+          <p><b>Key Responsibilities:</b></p>
+          <ul>
+            <li>Defined and drove enterprise-wide architecture vision, standards, and principles across business and IT domains</li>
+            <li>Chaired Architecture Review Board (ARB), acting as final authority for architectural decisions</li>
+            <li>Established architecture governance model, aligning central and domain-level architecture practices</li>
+            <li>Translated architecture strategy into engineering frameworks, reusable patterns, and Azure-based solutions</li>
+            <li>Ensured consistency, reuse, and simplification across systems supporting Solvency II transformation</li>
+            <li>Provided architectural oversight for major transformation programmes, ensuring scalability and compliance</li>
+            <li>Partnered with senior stakeholders (business, risk, compliance) to align IT investments with strategy</li>
+            <li>Drove standardisation and reduction of system fragmentation across the IT landscape</li>
+          </ul>
+
+          <p style="margin-top:12px;"><b>Project:</b> Enterprise &amp; Cloud Architecture (Deloitte Internal)</p>
+          <p>Led enterprise and cloud architecture initiatives, helping clients modernise IT strategy, digital infrastructure, and operational processes across large-scale transformation programmes.</p>
+          <p><b>Key Responsibilities:</b></p>
+          <ul>
+            <li>Led design and implementation of enterprise cloud architectures supporting large-scale digital transformations</li>
+            <li>Defined and executed IT transformation roadmaps, improving technology agility and reducing operational costs</li>
+            <li>Architected scalable, cloud-native solutions (Azure, AWS), enhancing performance, resilience, and security</li>
+            <li>Managed and mentored cross-functional teams of 10+ engineers and consultants</li>
+            <li>Collaborated with Deloitte's global network, leveraging international best practices to enhance client success</li>
+            <li>Conducted industry conferences and knowledge-sharing sessions on cloud architecture, API standardisation, and digital transformation</li>
+          </ul>
+          <p><b>Technologies:</b> LeanIX, VDI, Mendix, Dynatrace, AWS, Azure</p>
+          <hr>
+        </div>
+
+        <!-- Nish Tech -->
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Enterprise Architect – Nish Tech, Brussels</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>March 2023 – September 2024</h6>
+          <p>Worked within a federated, multi-organisation EU environment, aligning architecture across distributed teams and stakeholders.</p>
+          <p><b>Project:</b> DiGIT – European Commission</p>
+          <p>Designed and blueprinted cloud-native solutions for AWS and Red Hat OpenShift. Led integration of IT systems, reviewing architecture of existing enterprise systems including Workflow Automation, Events Processing, and API Gateway.</p>
+          <p><b>Key Responsibilities:</b></p>
+          <ul>
+            <li>Designed and developed architecture PoC and components, leveraging building blocks for scalability, performance, and security</li>
+            <li>Continuously researched emerging technologies and proposed changes aligned with Digital First Strategy</li>
+            <li>Coordinated technical architecture implementation with the Architecture Office and development teams</li>
+            <li>Conducted business workshops and built target-state (To-Be) roadmaps</li>
+            <li>Produced and reviewed technical documents including Architecture Roadmaps</li>
+            <li>Mentored developers, providing feedback and support on technical implementation tasks</li>
+            <li>Coordinated with central architecture office and multiple domain teams for alignment and governance</li>
+          </ul>
+          <p><b>Technologies:</b> Kafka, WSO2, Camunda, ServiceNow, OpenShift FaaS (KNative), AWS Lambda, Docker, Kubernetes</p>
+          <hr>
+        </div>
+
+        <!-- Verizon -->
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Enterprise Architect – Verizon Data Services India, Hyderabad</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>June 2011 – March 2023</h6>
+
+          <p><b>Project:</b> Service Assurance in ServiceNow</p>
+          <p>Migration of 100+ complex in-house Service Assurance business processes into ServiceNow.</p>
+          <ul>
+            <li>Led design &amp; implementation across various ServiceNow modules (ITSM, ITBM, ITOM, CSM, TSM, OMT)</li>
+            <li>Implemented end-to-end product architecture for a scalable, high-performance landscape</li>
+            <li>Architected integrations with ServiceNow using LDAP, Single Sign-On, Mid Server, Web Services, and in-house applications</li>
+          </ul>
+          <p><b>Technologies:</b> ServiceNow, Kafka</p>
+
+          <p style="margin-top:12px;"><b>Project:</b> E2E Enterprise Architecture for Enterprise Solutions</p>
+          <p>Executed 20+ technical designs, coordinating with 4+ business divisions to assure technical compliance across globally deployed applications.</p>
+          <ul>
+            <li>Coached and mentored subject-matter experts across 8+ critical BSS/OSS domains</li>
+            <li>Defined API Strategy; built domain APIs to TM Forum Open API and MEF standards (APIGEE, WSO2)</li>
+            <li>Facilitated enterprise architecture governance, principles, and guidance frameworks</li>
+            <li>Applied enterprise architecture modelling using UML, ArchiMate, and ARIS</li>
+          </ul>
+          <p><b>Technologies:</b> Java, Spring Boot, React, APIGEE, AWS, OCI, Azure, PCF, Open API, UML, ArchiMate, JIRA</p>
+
+          <p style="margin-top:12px;"><b>Project:</b> IntradaPro Web</p>
+          <p>Modernised a legacy Swing-based desktop Enterprise Order Management application into an Angular-based web application.</p>
+          <ul>
+            <li>Led team of 10 developers through migration from Swing desktop to Angular web application</li>
+            <li>Translated business requirements into technical specifications, designed prototype modules</li>
+            <li>Designed and implemented SOAP/REST APIs with Kubernetes and Docker</li>
+            <li>Built CI/CD pipelines using DevSecOps; maintained 99.999% high-availability on AWS</li>
+          </ul>
+          <p><b>Technologies:</b> Java, Spring Boot, Angular, REST APIs, Jenkins, Docker, NewRelic, Blackduck, 42Crunch, APIGEE, SQL, Cassandra, MongoDB, GIT, Unix, Shell Scripting</p>
+          <hr>
+        </div>
+
+      </div>
+
+      <!-- Education -->
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Maharaja Prithvi Engineering College</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2007 – 2011</h6>
+          <p>Bachelor of Engineering (B.E.) – Electrical and Electronics</p>
+          <hr>
+        </div>
+      </div>
+
+    </div>
+    <!-- End Right Column -->
+
+  </div>
+  <!-- End Grid -->
+
 </div>
+<!-- End Page Container -->
 
-<footer class="w3-container w3-teal w3-center w3-margin-top">
-    <i class="fa w3-hover-opacity"></i>
+<footer class="w3-container w3-teal w3-center w3-margin-top w3-padding-16 no-print">
+  <p style="margin:0;color:white;">Surya Prabhakaran &mdash; Chief / Principal Architect &mdash; Brussels, Belgium</p>
 </footer>
 
 </body>
