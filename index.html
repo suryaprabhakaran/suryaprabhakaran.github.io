@@ -49,21 +49,24 @@
     align-items: center;
   }
 
-  /* Force badge iframe to fit sidebar width */
-  .sidebar-top .badge-base {
-    width: 100% !important;
-    max-width: 252px;
+  /* Scale badge to fit sidebar */
+  .badge-scale-wrap {
+    width: 252px;
+    overflow: hidden;
   }
-  .sidebar-top .badge-base iframe {
-    max-width: 100% !important;
-    width: 252px !important;
+  .badge-scale-wrap .badge-base {
+    display: block;
+    transform: scale(0.95);
+    transform-origin: top center;
   }
   /* Fallback link visible on dark bg */
   .badge-base__link {
-    color: #fff !important;
-    font-weight: 600;
-    font-size: 14px;
+    color: #e2e8f0 !important;
+    font-weight: 700;
+    font-size: 15px;
     text-decoration: none;
+    display: block;
+    padding: 8px 0;
   }
 
   /* Profile header */
@@ -287,8 +290,10 @@
 
     <!-- Profile Header -->
     <div class="sidebar-top">
-      <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="VERTICAL" data-vanity="suryaprabhakaran" data-version="v1">
-        <a class="badge-base__link LI-simple-link" href="https://be.linkedin.com/in/suryaprabhakaran?trk=profile-badge">Surya Prabhakaran Lakshmanasamy</a>
+      <div class="badge-scale-wrap">
+        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="VERTICAL" data-vanity="suryaprabhakaran" data-version="v1">
+          <a class="badge-base__link LI-simple-link" href="https://be.linkedin.com/in/suryaprabhakaran?trk=profile-badge">Surya Prabhakaran Lakshmanasamy</a>
+        </div>
       </div>
       <a class="li-connect-btn" href="https://be.linkedin.com/in/suryaprabhakaran" target="_blank" style="margin-top:12px;">
         <i class="fab fa-linkedin"></i> View LinkedIn Profile
