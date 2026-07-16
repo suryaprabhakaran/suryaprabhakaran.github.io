@@ -277,6 +277,30 @@ a { color: inherit; }
 }
 .kpi-label { font-size: 10.5px; font-weight: 500; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.4px; }
 
+/* Core Competencies (3-column) */
+.competency-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+}
+.competency-col h3 {
+  font-family: var(--mono);
+  font-size: 11px; font-weight: 600; letter-spacing: 0.6px;
+  text-transform: uppercase; color: var(--navy);
+  padding-bottom: 8px; margin-bottom: 10px;
+  border-bottom: 2px solid var(--gold-tint);
+}
+.competency-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.competency-col li {
+  font-size: 13px; color: #334155; line-height: 1.5;
+  padding-left: 14px; position: relative;
+}
+.competency-col li::before {
+  content: ''; position: absolute; left: 0; top: 7px;
+  width: 5px; height: 5px; background: var(--gold);
+}
+@media (max-width: 700px) {
+  .competency-grid { grid-template-columns: 1fr; gap: 20px; }
+}
+
 /* Timeline */
 .timeline { position: relative; padding-left: 28px; }
 .timeline::before {
@@ -490,29 +514,8 @@ a:focus-visible, button:focus-visible {
       </div>
     </div>
 
-    <!-- Skills -->
+    <!-- Languages -->
     <div class="panel">
-      <div class="sidebar-section">
-        <div class="section-label">Core Competencies</div>
-        <div class="skill-wrap">
-          <span class="skill-tag">Enterprise Architecture</span>
-          <span class="skill-tag">Architecture Governance</span>
-          <span class="skill-tag">ARB Leadership</span>
-          <span class="skill-tag">Cloud Architecture</span>
-          <span class="skill-tag">Azure</span>
-          <span class="skill-tag">AWS</span>
-          <span class="skill-tag">Digital Transformation</span>
-          <span class="skill-tag">Platform Engineering</span>
-          <span class="skill-tag">Microservices</span>
-          <span class="skill-tag">API Design</span>
-          <span class="skill-tag">DevSecOps</span>
-          <span class="skill-tag">TOGAF</span>
-          <span class="skill-tag">Stakeholder Management</span>
-          <span class="skill-tag">Engineering Leadership</span>
-          <span class="skill-tag">AI &amp; Automation</span>
-          <span class="skill-tag">Agile / Scrum</span>
-        </div>
-      </div>
       <div class="sidebar-section">
         <div class="section-label">Languages</div>
         <div class="skill-wrap">
@@ -535,13 +538,55 @@ a:focus-visible, button:focus-visible {
       </div>
       <div class="card-body">
         <p class="summary-text">
-          Principal Architect with <strong>14+ years</strong> leading large-scale digital transformation and engineering initiatives across telecom, insurance, and EU institutions. Proven track record defining <strong>group-wide architecture vision</strong>, governance frameworks, and engineering standards in complex, federated environments. Experienced chairing <strong>Architecture Review Boards</strong>, serving as <strong>Interim Chief Architect</strong>, and aligning central and distributed IT organisations. Deep command of <strong>TOGAF, Azure, AWS, microservices, API ecosystems, and DevSecOps</strong>. Recognised for influencing C-suite stakeholders and driving cross-organisational alignment in multi-entity environments.
+          Principal / Chief Architect with <strong>14+ years</strong> leading large-scale digital transformation and engineering programmes across telecom, insurance, EU institutions, and complex multi-entity environments. Expert in defining <strong>target-state enterprise architectures, governance frameworks, and engineering standards</strong> aligned with business strategy, regulatory requirements (Solvency II), and group-wide architecture policies. Experienced <strong>Architecture Review Board chair and Interim Chief Architect</strong>, with a proven record of coaching senior architects, driving landscape simplification and technical-debt reduction, and influencing C-suite stakeholders. Deep command of <strong>TOGAF, ArchiMate, AWS, Azure, OpenShift, microservices, API ecosystems, and DevSecOps</strong>.
         </p>
         <div class="kpi-row">
           <div class="kpi"><div class="kpi-num">14+</div><div class="kpi-label">Years Experience</div></div>
           <div class="kpi"><div class="kpi-num">20+</div><div class="kpi-label">Technical Designs</div></div>
           <div class="kpi"><div class="kpi-num">100+</div><div class="kpi-label">Processes Migrated</div></div>
           <div class="kpi"><div class="kpi-num">4+</div><div class="kpi-label">Industries</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Core Competencies -->
+    <div class="content-card">
+      <div class="card-head">
+        <div class="card-head-icon"><i class="fas fa-sitemap"></i></div>
+        <h2>Core Competencies</h2>
+      </div>
+      <div class="card-body">
+        <div class="competency-grid">
+          <div class="competency-col">
+            <h3>Architecture &amp; Strategy</h3>
+            <ul>
+              <li>Target-state design, multi-horizon roadmaps, strategy translation</li>
+              <li>Architecture governance &amp; ARB leadership (chair)</li>
+              <li>Landscape simplification &amp; technical-debt reduction</li>
+              <li>Regulatory &amp; risk alignment (Solvency II, EU data protection)</li>
+              <li>Portfolio governance &amp; architectural trade-off input</li>
+            </ul>
+          </div>
+          <div class="competency-col">
+            <h3>Leadership &amp; People</h3>
+            <ul>
+              <li>Architecture community &amp; chapter leadership</li>
+              <li>Coaching &amp; mentoring senior architects and SMEs</li>
+              <li>C-suite influence (business, risk, compliance)</li>
+              <li>Change leadership in matrixed, federated organisations</li>
+              <li>Agile-at-scale delivery across tribes and domains</li>
+            </ul>
+          </div>
+          <div class="competency-col">
+            <h3>Technical Expertise</h3>
+            <ul>
+              <li>Cloud: AWS, Azure, OCI, OpenShift, Kubernetes, Docker</li>
+              <li>Microservices, API management (Apigee, WSO2, TM Forum Open API, MEF)</li>
+              <li>Integration &amp; platforms: Kafka, Camunda, ServiceNow, Mendix, LeanIX</li>
+              <li>DevSecOps &amp; CI/CD (Jenkins), security- and resilience-by-design</li>
+              <li>TOGAF, ArchiMate, UML, ARIS; Java / Spring Boot</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -564,11 +609,9 @@ a:focus-visible, button:focus-visible {
             </div>
             <p class="job-desc">Driving software and platform architecture for scalable, high-performance digital solutions.</p>
             <ul>
-              <li>Defined engineering standards and architecture patterns for scalable digital platforms</li>
-              <li>Designed cloud-native and microservices-based architectures ensuring performance and resilience</li>
-              <li>Promoted DevOps, automation, and secure-by-design practices across engineering teams</li>
-              <li>Enabled reuse of components and shared services, reducing duplication and improving efficiency</li>
-              <li>Led platform consolidation and simplification initiatives across product lines</li>
+              <li>Define engineering standards and architecture patterns for scalable, high-performance digital platforms</li>
+              <li>Lead platform consolidation and simplification initiatives across product lines, enabling reuse of components and shared services and reducing duplication</li>
+              <li>Design cloud-native, microservices-based architectures ensuring performance and resilience; promote DevOps, automation, and secure-by-design practices across engineering teams</li>
             </ul>
           </div>
 
@@ -587,12 +630,10 @@ a:focus-visible, button:focus-visible {
             </div>
             <p class="job-desc">Led enterprise architecture and governance for a complex multi-entity insurance environment.</p>
             <ul>
-              <li>Defined enterprise-wide architecture vision, standards, and principles across business and IT domains</li>
-              <li>Chaired Architecture Review Board (ARB) — final authority for all architectural decisions</li>
-              <li>Established governance model aligning central and domain-level architecture practices</li>
-              <li>Translated strategy into Azure-based engineering frameworks and reusable patterns</li>
-              <li>Oversaw Solvency II transformation, ensuring scalability, compliance, and consistency</li>
-              <li>Partnered with C-suite (business, risk, compliance) to align IT investments with strategy</li>
+              <li>Defined and owned the enterprise-wide architecture vision, standards, and principles across business and IT domains for a regulated, multi-entity insurance organisation</li>
+              <li>Chaired the Architecture Review Board (ARB) — final authority for all architectural decisions; established a governance model aligning central and domain-level architecture practices</li>
+              <li>Translated group strategy into Azure-based engineering frameworks and reusable patterns; oversaw the Solvency II transformation for scalability, compliance, and consistency</li>
+              <li>Partnered with C-suite stakeholders (business, risk, compliance) to align IT investments with strategy</li>
             </ul>
             <div class="tech-row">
               <span class="tech-pill">LeanIX</span><span class="tech-pill">Azure</span><span class="tech-pill">Dynatrace</span><span class="tech-pill">Mendix</span>
@@ -601,8 +642,7 @@ a:focus-visible, button:focus-visible {
             <div class="sub-project">
               <div class="sub-project-title">Enterprise &amp; Cloud Architecture (Deloitte Internal)</div>
               <ul>
-                <li>Led cloud architecture design for large-scale digital transformation programmes</li>
-                <li>Defined IT transformation roadmaps improving agility and reducing operational costs</li>
+                <li>Led cloud architecture design (AWS, Azure) for large-scale digital transformation programmes; defined IT transformation roadmaps improving agility and reducing operational cost</li>
                 <li>Managed and mentored cross-functional teams of 10+ engineers and consultants</li>
               </ul>
               <div class="tech-row"><span class="tech-pill">AWS</span><span class="tech-pill">Azure</span><span class="tech-pill">VDI</span></div>
@@ -621,13 +661,10 @@ a:focus-visible, button:focus-visible {
             <div style="margin-bottom:8px;">
               <span class="client-badge"><i class="fas fa-landmark"></i> DiGIT – European Commission</span>
             </div>
-            <p class="job-desc">Designed cloud-native solutions in a federated multi-organisation EU environment on AWS and OpenShift.</p>
+            <p class="job-desc">Designed cloud-native solutions in a federated, multi-organisation EU environment on AWS and OpenShift, in line with the Commission's Digital First Strategy.</p>
             <ul>
-              <li>Designed architecture PoCs leveraging building blocks for scalability, performance, and security</li>
-              <li>Researched emerging technologies aligned with Digital First Strategy</li>
-              <li>Coordinated architecture implementation with the Architecture Office and development teams</li>
-              <li>Conducted business workshops and built target-state (To-Be) roadmaps</li>
-              <li>Mentored developers; coordinated cross-domain governance with central architecture office</li>
+              <li>Built target-state (To-Be) roadmaps and architecture PoCs leveraging reusable building blocks for scalability, performance, and security</li>
+              <li>Coordinated cross-domain governance and implementation with the central Architecture Office and development teams; ran business workshops and mentored developers</li>
             </ul>
             <div class="tech-row">
               <span class="tech-pill">Kafka</span><span class="tech-pill">WSO2</span><span class="tech-pill">Camunda</span>
@@ -647,21 +684,10 @@ a:focus-visible, button:focus-visible {
             </div>
 
             <div class="sub-project">
-              <div class="sub-project-title">Service Assurance in ServiceNow</div>
-              <p class="job-desc" style="margin-top:0;margin-bottom:6px;">Migration of 100+ complex in-house Service Assurance processes into ServiceNow.</p>
+              <div class="sub-project-title">E2E Enterprise Architecture — Enterprise Solutions</div>
               <ul>
-                <li>Led design &amp; implementation across ServiceNow modules (ITSM, ITBM, ITOM, CSM, TSM, OMT)</li>
-                <li>Architected integrations using LDAP, SSO, Mid Server, Web Services</li>
-              </ul>
-            </div>
-
-            <div class="sub-project" style="margin-top:10px;">
-              <div class="sub-project-title">E2E Enterprise Architecture for Enterprise Solutions</div>
-              <ul>
-                <li>Executed 20+ technical designs coordinating with 4+ business divisions globally</li>
-                <li>Defined API Strategy aligned to TM Forum Open API and MEF standards (APIGEE, WSO2)</li>
-                <li>Coached and mentored SMEs across 8+ critical BSS/OSS domains</li>
-                <li>Applied enterprise architecture modelling with UML, ArchiMate, and ARIS</li>
+                <li>Executed 20+ technical designs coordinating with 4+ business divisions globally; coached and mentored SMEs across 8+ critical BSS/OSS domains</li>
+                <li>Defined the API strategy aligned to TM Forum Open API and MEF standards (Apigee, WSO2); applied enterprise architecture modelling with UML, ArchiMate, and ARIS</li>
               </ul>
               <div class="tech-row">
                 <span class="tech-pill">Java</span><span class="tech-pill">Spring Boot</span><span class="tech-pill">APIGEE</span>
@@ -670,10 +696,17 @@ a:focus-visible, button:focus-visible {
             </div>
 
             <div class="sub-project" style="margin-top:10px;">
+              <div class="sub-project-title">Service Assurance on ServiceNow</div>
+              <p class="job-desc" style="margin-top:0;margin-bottom:6px;">Migration of 100+ complex in-house Service Assurance processes into ServiceNow.</p>
+              <ul>
+                <li>Led design and implementation of the migration into ServiceNow (ITSM, ITBM, ITOM, CSM, TSM, OMT); architected LDAP, SSO, Mid Server, and web-service integrations</li>
+              </ul>
+            </div>
+
+            <div class="sub-project" style="margin-top:10px;">
               <div class="sub-project-title">IntradaPro Web</div>
               <ul>
-                <li>Led 10-person team migrating legacy Swing desktop app to Angular web application</li>
-                <li>Built CI/CD pipelines using DevSecOps; maintained 99.999% HA on AWS</li>
+                <li>Led a 10-person team migrating a legacy Swing desktop application to an Angular web application; built DevSecOps CI/CD pipelines and maintained 99.999% availability on AWS</li>
               </ul>
               <div class="tech-row">
                 <span class="tech-pill">Angular</span><span class="tech-pill">Docker</span><span class="tech-pill">Jenkins</span>
@@ -697,7 +730,7 @@ a:focus-visible, button:focus-visible {
           <div class="edu-icon"><i class="fas fa-university"></i></div>
           <div class="edu-info">
             <h4>Maharaja Prithvi Engineering College</h4>
-            <p>Bachelor of Engineering (B.E.) – Electrical and Electronics &nbsp;|&nbsp; 2007 – 2011</p>
+            <p>Bachelor of Engineering (B.E.), Electrical &amp; Electronics &nbsp;|&nbsp; 2007 – 2011</p>
           </div>
         </div>
       </div>
