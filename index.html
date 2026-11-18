@@ -417,9 +417,36 @@ a:focus-visible, button:focus-visible {
 }
 
 /* ─── USE CASES ───────────────────────────────────── */
-.uc-block + .uc-block { margin-top: 28px; padding-top: 24px; border-top: 1px dashed var(--border); }
-.uc-title { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
-.uc-sub { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-bottom: 14px; }
+.uc-block + .uc-block { margin-top: 14px; }
+.uc-title { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--text); }
+.uc-sub { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+details.uc-block > summary {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 14px 18px; border: 1px solid var(--border); border-radius: 6px;
+  background: var(--bg); transition: border-color .2s, background .2s;
+}
+details.uc-block > summary::-webkit-details-marker { display: none; }
+details.uc-block > summary:hover { border-color: var(--gold); }
+details.uc-block[open] > summary { border-color: var(--gold); background: var(--gold-tint); }
+details.uc-block > summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+details.uc-block > summary .uc-title { display: block; }
+details.uc-block > summary .uc-sub { display: block; margin-top: 2px; }
+.uc-chev {
+  width: 10px; height: 10px; flex-shrink: 0; margin-right: 4px;
+  border-right: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
+  transform: rotate(45deg); transition: transform .2s;
+}
+details.uc-block[open] > summary .uc-chev { transform: rotate(-135deg); }
+.uc-body { padding: 18px 4px 6px; }
+.uc-tools { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 14px; }
+.uc-btn {
+  font-family: var(--mono); font-size: 11.5px; background: #fff; color: var(--navy);
+  border: 1px solid var(--border); padding: 5px 12px; border-radius: 3px; cursor: pointer;
+  transition: border-color .2s;
+}
+.uc-btn:hover { border-color: var(--gold); }
+.uc-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 .uc-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 16px; }
 .uc-step h4 {
   font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.8px;
@@ -483,6 +510,9 @@ a:focus-visible, button:focus-visible {
       </button>
       <a class="btn-ghost" href="https://www.linkedin.com/in/suryaprabhakaran" target="_blank" rel="noopener">
         <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a class="btn-ghost" href="#use-cases" id="goto-use-cases">
+        <i class="fas fa-lightbulb"></i> Use Cases
       </a>
     </div>
   </div>
@@ -622,9 +652,14 @@ a:focus-visible, button:focus-visible {
       </div>
       <div class="card-body">
 
-        <div class="uc-block">
-          <div class="uc-title">AI-Assisted Architecture Documentation Platform</div>
-          <div class="uc-sub">Barco &middot; standards, AI skill and developer portal</div>
+        <div class="uc-tools no-print">
+          <button type="button" class="uc-btn" data-uc="open">Expand all</button>
+          <button type="button" class="uc-btn" data-uc="close">Collapse all</button>
+        </div>
+
+        <details class="uc-block">
+          <summary><span><span class="uc-title">AI-Assisted Architecture Documentation Platform</span><span class="uc-sub">Barco &middot; standards, AI skill and developer portal</span></span><span class="uc-chev" aria-hidden="true"></span></summary>
+          <div class="uc-body">
           <div class="kpi-row" style="grid-template-columns:repeat(4,1fr);margin-top:0;">
             <div class="kpi"><div class="kpi-num">100+</div><div class="kpi-label">Repositories</div></div>
             <div class="kpi"><div class="kpi-num">3</div><div class="kpi-label">Portfolios</div></div>
@@ -654,11 +689,12 @@ a:focus-visible, button:focus-visible {
           <div class="tech-row">
             <span class="tech-pill">AI Skill</span><span class="tech-pill">Developer Portal</span><span class="tech-pill">Impact Analysis</span><span class="tech-pill">Architecture Standards</span><span class="tech-pill">Governance</span>
           </div>
-        </div>
+          </div>
+        </details>
 
-        <div class="uc-block">
-          <div class="uc-title">Month-End Batch Processing in the Cloud</div>
-          <div class="uc-sub">Insurance &middot; on-premises to cloud, parallel processing and capacity planning</div>
+        <details class="uc-block">
+          <summary><span><span class="uc-title">Month-End Batch Processing in the Cloud</span><span class="uc-sub">Insurance &middot; on-premises to cloud, parallel processing and capacity planning</span></span><span class="uc-chev" aria-hidden="true"></span></summary>
+          <div class="uc-body">
           <div class="kpi-row" style="grid-template-columns:repeat(3,1fr);margin-top:0;">
             <div class="kpi"><div class="kpi-num">200k&rarr;300k</div><div class="kpi-label">Scenarios per Run</div></div>
             <div class="kpi"><div class="kpi-num">~20%</div><div class="kpi-label">Cost Reduction</div></div>
@@ -686,7 +722,8 @@ a:focus-visible, button:focus-visible {
           <div class="tech-row">
             <span class="tech-pill">Cloud Migration</span><span class="tech-pill">Parallel Processing</span><span class="tech-pill">Capacity Planning</span><span class="tech-pill">Cost Optimisation</span><span class="tech-pill">Resilience</span>
           </div>
-        </div>
+          </div>
+        </details>
 
       </div>
     </div>
@@ -861,6 +898,24 @@ a:focus-visible, button:focus-visible {
   Surya Prabhakaran &mdash; Chief / Principal Architect &mdash; Brussels &mdash;
   <a href="https://www.linkedin.com/in/suryaprabhakaran" target="_blank" rel="noopener">LinkedIn</a>
 </footer>
+
+<script>
+(function () {
+  var sec = document.getElementById('use-cases');
+  if (!sec) return;
+  var items = sec.querySelectorAll('details.uc-block');
+  function setAll(open) { items.forEach(function (d) { d.open = open; }); }
+  sec.querySelectorAll('[data-uc]').forEach(function (b) {
+    b.addEventListener('click', function () { setAll(b.getAttribute('data-uc') === 'open'); });
+  });
+  var go = document.getElementById('goto-use-cases');
+  if (go) go.addEventListener('click', function () { setAll(true); });
+  function fromHash() { if (location.hash === '#use-cases') setAll(true); }
+  fromHash();
+  window.addEventListener('hashchange', fromHash);
+  window.addEventListener('beforeprint', function () { setAll(true); });
+})();
+</script>
 
 </body>
 </html>
