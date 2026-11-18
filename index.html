@@ -416,6 +416,20 @@ a:focus-visible, button:focus-visible {
   * { transition: none !important; }
 }
 
+/* ─── USE CASES ───────────────────────────────────── */
+.uc-block + .uc-block { margin-top: 28px; padding-top: 24px; border-top: 1px dashed var(--border); }
+.uc-title { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+.uc-sub { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-bottom: 14px; }
+.uc-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 16px; }
+.uc-step h4 {
+  font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.8px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+  padding-bottom: 6px; border-bottom: 2px solid var(--gold-tint);
+}
+.uc-step p, .uc-step li { font-size: 13px; color: #334155; line-height: 1.55; }
+.uc-step ul { padding-left: 16px; display: flex; flex-direction: column; gap: 6px; }
+@media (max-width: 800px) { .uc-steps { grid-template-columns: 1fr; } }
+.uc-block .tech-row { margin-top: 18px; }
 /* ─── PRINT ───────────────────────────────────────── */
 @media print {
   .hero { background: var(--navy) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -453,7 +467,7 @@ a:focus-visible, button:focus-visible {
       <div class="hero-meta">
         <span><i class="fas fa-map-marker-alt"></i> Brussels, Belgium</span>
         <span><i class="fas fa-envelope"></i> suryaprabhakaran@hotmail.com</span>
-        <span><i class="fas fa-phone"></i> +32 0499 69 82 66</span>
+        <span><i class="fas fa-phone"></i> +32 499 69 82 66</span>
       </div>
       <div class="hero-chips">
         <span class="hero-chip">TOGAF Certified</span>
@@ -488,9 +502,9 @@ a:focus-visible, button:focus-visible {
         <div class="contact-row"><i class="fas fa-envelope"></i>
           <a href="mailto:suryaprabhakaran@hotmail.com">suryaprabhakaran@hotmail.com</a>
         </div>
-        <div class="contact-row"><i class="fas fa-phone"></i> +32 0499 69 82 66</div>
+        <div class="contact-row"><i class="fas fa-phone"></i> +32 499 69 82 66</div>
         <div class="contact-row"><i class="fab fa-linkedin"></i>
-          <a href="#" target="_blank" rel="noopener">linkedin.com/in/suryaprabhakaran</a>
+          <a href="https://www.linkedin.com/in/suryaprabhakaran" target="_blank" rel="noopener">linkedin.com/in/suryaprabhakaran</a>
         </div>
       </div>
     </div>
@@ -510,6 +524,10 @@ a:focus-visible, button:focus-visible {
           <a href="https://www.credential.net/e9d0e810-7f8e-42ce-bee9-75f0dbe904e6" target="_blank" rel="noopener">
             <img src="https://images.credential.net/badge/tiny/0107ugzz_1745910478632_badge.png" alt="Blockchain Architect certification badge" loading="lazy">
           </a>
+        </div>
+        <div class="skill-wrap" style="margin-top:14px;">
+          <span class="skill-tag">LeanIX Certified – Level 1 &amp; 2</span>
+          <span class="skill-tag">TM Forum Open APIs – Skill Certified</span>
         </div>
       </div>
     </div>
@@ -538,7 +556,7 @@ a:focus-visible, button:focus-visible {
       </div>
       <div class="card-body">
         <p class="summary-text">
-          Principal / Chief Architect with <strong>15+ years</strong> leading large-scale digital transformation and engineering programmes across telecom, insurance, EU institutions, and complex multi-entity environments. Expert in defining <strong>target-state enterprise architectures, governance frameworks, and engineering standards</strong> aligned with business strategy, regulatory requirements (Solvency II), and group-wide architecture policies. Experienced <strong>Architecture Review Board chair and Interim Chief Architect</strong>, with a proven record of coaching senior architects, driving landscape simplification and technical-debt reduction, and influencing C-suite stakeholders. Deep command of <strong>TOGAF, ArchiMate, AWS, Azure, OpenShift, microservices, API ecosystems, and DevSecOps</strong>.
+          Principal / Chief Architect with <strong>15+ years</strong> spanning enterprise, solution and infrastructure architecture across telecom, insurance, EU institutions and complex multi-entity environments. Experienced <strong>Architecture Review Board chair and Interim Chief Architect</strong>, accountable for target-state architecture, technology standards coherence and architecture documentation across IT domains. Combines enterprise-level governance with hands-on grounding in the infrastructure estate — <strong>CMDB and CI class modelling, discovery and network topology, cloud and container platforms, and high-availability design</strong>. Proven record of coaching senior architects, driving landscape simplification and technical-debt reduction, and influencing C-suite stakeholders in regulated environments (Solvency II, EU). Deep command of <strong>TOGAF, ArchiMate, AWS, Azure, OpenShift, microservices, API ecosystems and DevSecOps</strong>.
         </p>
         <div class="kpi-row">
           <div class="kpi"><div class="kpi-num">15+</div><div class="kpi-label">Years Experience</div></div>
@@ -558,36 +576,118 @@ a:focus-visible, button:focus-visible {
       <div class="card-body">
         <div class="competency-grid">
           <div class="competency-col">
-            <h3>Architecture &amp; Strategy</h3>
+            <h3>Architecture &amp; Governance</h3>
             <ul>
               <li>Target-state design, multi-horizon roadmaps, strategy translation</li>
               <li>Architecture governance &amp; ARB leadership (chair)</li>
+              <li>Technology standards &amp; reference architecture consolidation</li>
               <li>Landscape simplification &amp; technical-debt reduction</li>
               <li>Regulatory &amp; risk alignment (Solvency II, EU data protection)</li>
-              <li>Portfolio governance &amp; architectural trade-off input</li>
+              <li>TOGAF, ArchiMate, UML, ARIS; ITIL-aligned service design</li>
             </ul>
           </div>
           <div class="competency-col">
-            <h3>Leadership &amp; People</h3>
+            <h3>Infrastructure &amp; Platform</h3>
             <ul>
-              <li>Architecture community &amp; chapter leadership</li>
+              <li>Cloud &amp; compute: AWS, Azure, OCI, OpenShift, Kubernetes, Docker</li>
+              <li>CMDB &amp; CI class modelling, discovery, dependency/service mapping (ServiceNow)</li>
+              <li>Network topology analysis &amp; customer network onboarding for discovery</li>
+              <li>Resilience, high-availability and disaster-recovery design</li>
+              <li>Security- and resilience-by-design; identity (LDAP, SSO)</li>
+              <li>DevSecOps &amp; CI/CD (Jenkins), infrastructure automation</li>
+              <li>Integration &amp; platforms: Kafka, Camunda, ServiceNow, Mendix, LeanIX</li>
+              <li>Microservices &amp; API management (Apigee, WSO2, TM Forum Open API, MEF)</li>
+            </ul>
+          </div>
+          <div class="competency-col">
+            <h3>Leadership &amp; Delivery</h3>
+            <ul>
               <li>Coaching &amp; mentoring senior architects and SMEs</li>
               <li>C-suite influence (business, risk, compliance)</li>
               <li>Change leadership in matrixed, federated organisations</li>
+              <li>Cross-domain coordination &amp; consensus building</li>
               <li>Agile-at-scale delivery across tribes and domains</li>
-            </ul>
-          </div>
-          <div class="competency-col">
-            <h3>Technical Expertise</h3>
-            <ul>
-              <li>Cloud: AWS, Azure, OCI, OpenShift, Kubernetes, Docker</li>
-              <li>Microservices, API management (Apigee, WSO2, TM Forum Open API, MEF)</li>
-              <li>Integration &amp; platforms: Kafka, Camunda, ServiceNow, Mendix, LeanIX</li>
-              <li>DevSecOps &amp; CI/CD (Jenkins), security- and resilience-by-design</li>
-              <li>TOGAF, ArchiMate, UML, ARIS; Java / Spring Boot</li>
+              <li>Architecture community &amp; chapter leadership</li>
             </ul>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Featured Use Cases -->
+    <div class="content-card" id="use-cases">
+      <div class="card-head">
+        <div class="card-head-icon"><i class="fas fa-lightbulb"></i></div>
+        <h2>Featured Use Cases</h2>
+      </div>
+      <div class="card-body">
+
+        <div class="uc-block">
+          <div class="uc-title">AI-Assisted Architecture Documentation Platform</div>
+          <div class="uc-sub">Barco &middot; standards, AI skill and developer portal</div>
+          <div class="kpi-row" style="grid-template-columns:repeat(4,1fr);margin-top:0;">
+            <div class="kpi"><div class="kpi-num">100+</div><div class="kpi-label">Repositories</div></div>
+            <div class="kpi"><div class="kpi-num">3</div><div class="kpi-label">Portfolios</div></div>
+            <div class="kpi"><div class="kpi-num">~60%</div><div class="kpi-label">Less Discussion Time</div></div>
+            <div class="kpi"><div class="kpi-num">~80%</div><div class="kpi-label">AI Draft Accuracy, Human-Reviewed</div></div>
+          </div>
+          <div class="uc-steps">
+            <div class="uc-step">
+              <h4>Challenge</h4>
+              <p>Documentation was inconsistent: no common standard, varied tooling and content that went stale. Teams spent meeting time working out how services integrate and what a change would affect.</p>
+            </div>
+            <div class="uc-step">
+              <h4>Approach</h4>
+              <ul>
+                <li>Standardised the documentation tooling and defined the standard</li>
+                <li>Built an AI skill that generates service documentation to that standard, covering security and regulatory requirements and running impact analysis by identifying the affected code</li>
+                <li>Created a portal that publishes the documentation and product details automatically</li>
+                <li>Added a developer review before every commit to validate AI output</li>
+                <li>Set up an architecture community across portfolios to maintain the standard</li>
+              </ul>
+            </div>
+            <div class="uc-step">
+              <h4>Outcome</h4>
+              <p>Integration clarity across 100+ repositories reduced discussion time by about 60%. Documentation now updates automatically, and the community keeps the standard consistent and improving across portfolios.</p>
+            </div>
+          </div>
+          <div class="tech-row">
+            <span class="tech-pill">AI Skill</span><span class="tech-pill">Developer Portal</span><span class="tech-pill">Impact Analysis</span><span class="tech-pill">Architecture Standards</span><span class="tech-pill">Governance</span>
+          </div>
+        </div>
+
+        <div class="uc-block">
+          <div class="uc-title">Month-End Batch Processing in the Cloud</div>
+          <div class="uc-sub">Insurance &middot; on-premises to cloud, parallel processing and capacity planning</div>
+          <div class="kpi-row" style="grid-template-columns:repeat(3,1fr);margin-top:0;">
+            <div class="kpi"><div class="kpi-num">200k&rarr;300k</div><div class="kpi-label">Scenarios per Run</div></div>
+            <div class="kpi"><div class="kpi-num">~20%</div><div class="kpi-label">Cost Reduction</div></div>
+            <div class="kpi"><div class="kpi-num">Reserved</div><div class="kpi-label">Month-End Capacity</div></div>
+          </div>
+          <div class="uc-steps">
+            <div class="uc-step">
+              <h4>Challenge</h4>
+              <p>A complex month-end batch was moved from on-premises to the cloud as-is. Running 200,000 growing to 300,000 scenarios sequentially, on a machine type that did not fit the workload, it took around 14 hours.</p>
+            </div>
+            <div class="uc-step">
+              <h4>Approach</h4>
+              <ul>
+                <li>Split the independent scenarios into batches, each running on its own machine</li>
+                <li>Ran proofs of concept across machine types and scenario sizes to compare runtime and cost</li>
+                <li>Worked with the cloud provider to reserve the required machines for the client's month-end runs under their prepaid account, as the best-fit type was not available in the home region</li>
+                <li>Built an availability check with a pre-validated fallback machine type, so planned volume still runs if the primary cluster is unavailable</li>
+              </ul>
+            </div>
+            <div class="uc-step">
+              <h4>Outcome</h4>
+              <p>Run time was reduced significantly, month-end runs became reliable, the process scales to 300,000 scenarios, and choosing the right machines cut cost by about 20%.</p>
+            </div>
+          </div>
+          <div class="tech-row">
+            <span class="tech-pill">Cloud Migration</span><span class="tech-pill">Parallel Processing</span><span class="tech-pill">Capacity Planning</span><span class="tech-pill">Cost Optimisation</span><span class="tech-pill">Resilience</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -609,8 +709,8 @@ a:focus-visible, button:focus-visible {
             </div>
             <p class="job-desc">Driving software and platform architecture for scalable, high-performance digital solutions.</p>
             <ul>
-              <li>Define engineering standards and architecture patterns for scalable, high-performance digital platforms</li>
-              <li>Lead platform consolidation and simplification initiatives across product lines, enabling reuse of components and shared services and reducing duplication</li>
+              <li>Define the engineering standards and architecture patterns for AI agents built into regulated healthcare products — data access, traceability, human oversight and model lifecycle — as the sole architect setting them, and chair the company architecture community that adopts them</li>
+              <li>Lead platform consolidation and legacy rationalisation across product lines and an estate of 100+ repositories, enabling reuse of shared components and services and reducing duplication</li>
               <li>Design cloud-native, microservices-based architectures ensuring performance and resilience; promote DevOps, automation, and secure-by-design practices across engineering teams</li>
             </ul>
           </div>
@@ -632,7 +732,8 @@ a:focus-visible, button:focus-visible {
             <ul>
               <li>Defined and owned the enterprise-wide architecture vision, standards, and principles across business and IT domains for a regulated, multi-entity insurance organisation</li>
               <li>Chaired the Architecture Review Board (ARB) — final authority for all architectural decisions; established a governance model aligning central and domain-level architecture practices</li>
-              <li>Translated group strategy into Azure-based engineering frameworks and reusable patterns; oversaw the Solvency II transformation for scalability, compliance, and consistency</li>
+              <li>Consolidated and maintained technology standards and reference architectures; translated group strategy into Azure-based engineering frameworks and reusable patterns</li>
+              <li>Oversaw the Solvency II transformation for scalability, compliance and consistency; embedded security, resilience and regulatory compliance by design</li>
               <li>Partnered with C-suite stakeholders (business, risk, compliance) to align IT investments with strategy</li>
             </ul>
             <div class="tech-row">
@@ -664,12 +765,13 @@ a:focus-visible, button:focus-visible {
             <p class="job-desc">Designed cloud-native solutions in a federated, multi-organisation EU environment on AWS and OpenShift, in line with the Commission's Digital First Strategy.</p>
             <ul>
               <li>Built target-state (To-Be) roadmaps and architecture PoCs leveraging reusable building blocks for scalability, performance, and security</li>
-              <li>Coordinated cross-domain governance and implementation with the central Architecture Office and development teams; ran business workshops and mentored developers</li>
+              <li>Coordinated cross-domain governance and implementation with the central Architecture Office and delivery teams, acting as integrator across domain specialists rather than producing architecture in isolation</li>
+              <li>Ran business workshops and mentored developers (Kafka, WSO2, Camunda, ServiceNow, KNative, AWS Lambda, Kubernetes, SparX)</li>
             </ul>
             <div class="tech-row">
               <span class="tech-pill">Kafka</span><span class="tech-pill">WSO2</span><span class="tech-pill">Camunda</span>
               <span class="tech-pill">ServiceNow</span><span class="tech-pill">KNative</span><span class="tech-pill">AWS Lambda</span>
-              <span class="tech-pill">Docker</span><span class="tech-pill">Kubernetes</span><span class="tech-pill">OpenShift</span>
+              <span class="tech-pill">Docker</span><span class="tech-pill">Kubernetes</span><span class="tech-pill">OpenShift</span><span class="tech-pill">SparX</span>
             </div>
           </div>
 
@@ -684,6 +786,20 @@ a:focus-visible, button:focus-visible {
             </div>
 
             <div class="sub-project">
+              <div class="sub-project-title">Configuration Management, CMDB &amp; Infrastructure Topology</div>
+              <ul>
+                <li>Owned configuration management for enterprise service platforms: designed the CMDB structure and CI class model in ServiceNow, defining how customer infrastructure and application estates were captured, related and maintained</li>
+                <li>Designed dependency and service mapping across infrastructure and application CIs, establishing the authoritative view of the estate used for change, incident and impact analysis</li>
+                <li>Analysed customer network topology and defined the network prerequisites and connectivity patterns customers had to implement so their environments could be discovered and onboarded into the CMDB</li>
+                <li>Architected Mid Server placement and discovery configuration across segmented customer networks, working with network and infrastructure teams on access, routing and credential design</li>
+                <li>Established configuration and change standards aligned to ITIL, governing CI ownership, data quality and lifecycle</li>
+              </ul>
+              <div class="tech-row">
+                <span class="tech-pill">ServiceNow</span><span class="tech-pill">CMDB</span><span class="tech-pill">Mid Server</span><span class="tech-pill">ITIL</span>
+              </div>
+            </div>
+
+            <div class="sub-project" style="margin-top:10px;">
               <div class="sub-project-title">E2E Enterprise Architecture — Enterprise Solutions</div>
               <ul>
                 <li>Executed 20+ technical designs coordinating with 4+ business divisions globally; coached and mentored SMEs across 8+ critical BSS/OSS domains</li>
@@ -699,14 +815,16 @@ a:focus-visible, button:focus-visible {
               <div class="sub-project-title">Service Assurance on ServiceNow</div>
               <p class="job-desc" style="margin-top:0;margin-bottom:6px;">Migration of 100+ complex in-house Service Assurance processes into ServiceNow.</p>
               <ul>
-                <li>Led design and implementation of the migration into ServiceNow (ITSM, ITBM, ITOM, CSM, TSM, OMT); architected LDAP, SSO, Mid Server, and web-service integrations</li>
+                <li>Led design and implementation of the migration of 100+ complex in-house Service Assurance processes into ServiceNow (ITSM, ITBM, ITOM, CSM, TSM, OMT)</li>
+                <li>Architected platform and infrastructure integrations spanning LDAP, SSO, Mid Server and web services, covering identity, network access and security constraints across domains</li>
               </ul>
             </div>
 
             <div class="sub-project" style="margin-top:10px;">
               <div class="sub-project-title">IntradaPro Web</div>
               <ul>
-                <li>Led a 10-person team migrating a legacy Swing desktop application to an Angular web application; built DevSecOps CI/CD pipelines and maintained 99.999% availability on AWS</li>
+                <li>Led a 10-person team migrating a legacy Swing desktop application to an Angular web application</li>
+                <li>Designed the supporting AWS infrastructure and DevSecOps CI/CD pipelines, sustaining 99.999% availability through resilience and high-availability design</li>
               </ul>
               <div class="tech-row">
                 <span class="tech-pill">Angular</span><span class="tech-pill">Docker</span><span class="tech-pill">Jenkins</span>
