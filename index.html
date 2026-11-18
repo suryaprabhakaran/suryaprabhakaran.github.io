@@ -794,6 +794,34 @@ details.uc-block[open] > summary .uc-chev { transform: rotate(-135deg); }
         </details>
 
         <details class="uc-block">
+          <summary><span><span class="uc-title">Moving Workflow and API Services from On-Premises to AWS</span><span class="uc-sub">Enterprise Architect &middot; EU institution &middot; containers, API gateway and identity integration</span></span><span class="uc-chev" aria-hidden="true"></span></summary>
+          <div class="uc-body">
+          <div class="uc-steps">
+            <div class="uc-step">
+              <h4>Challenge</h4>
+              <p>In a federated EU environment, services ran on-premises while the organisation moved towards cloud-native solutions on AWS. The workflow engine and the institution's APIs needed a new home, and applications needed a faster way to onboard with the institution's own identity provider.</p>
+            </div>
+            <div class="uc-step">
+              <h4>Approach</h4>
+              <ul>
+                <li>Moved the Camunda workflow engine from on-premises to AWS, running it in containers</li>
+                <li>Built an API gateway on AWS to expose the institution's APIs</li>
+                <li>Explored how the institution's existing identity provider could integrate with AWS identity services, to onboard applications faster</li>
+                <li>Ran architecture PoCs and business workshops, and mentored developers on the target technologies</li>
+              </ul>
+            </div>
+            <div class="uc-step">
+              <h4>Outcome</h4>
+              <p>The Camunda workflow engine and the API gateway moved to AWS on a container-based, reusable pattern for other teams, and identity integration was explored as the way to speed up onboarding.</p>
+            </div>
+          </div>
+          <div class="tech-row">
+            <span class="tech-pill">AWS</span><span class="tech-pill">Containers</span><span class="tech-pill">Camunda</span><span class="tech-pill">API Gateway</span><span class="tech-pill">Identity Federation</span><span class="tech-pill">Cloud Migration</span>
+          </div>
+          </div>
+        </details>
+
+        <details class="uc-block">
           <summary><span><span class="uc-title">Application Portfolio Assessment for a Geopolitical Split</span><span class="uc-sub">Consultant &middot; medical-sector client &middot; application rationalisation and separation</span></span><span class="uc-chev" aria-hidden="true"></span></summary>
           <div class="uc-body">
           <div class="uc-steps">
@@ -903,6 +931,7 @@ details.uc-block[open] > summary .uc-chev { transform: rotate(-135deg); }
             <ul>
               <li>Built target-state (To-Be) roadmaps and architecture PoCs leveraging reusable building blocks for scalability, performance, and security</li>
               <li>Coordinated cross-domain governance and implementation with the central Architecture Office and delivery teams, acting as integrator across domain specialists rather than producing architecture in isolation</li>
+              <li>Moved the Camunda workflow engine from on-premises to AWS using containers, built an API gateway on AWS for the institution's APIs, and explored integrating the institution's identity provider with AWS identity services for faster application onboarding</li>
               <li>Ran business workshops and mentored developers (Kafka, WSO2, Camunda, ServiceNow, KNative, AWS Lambda, Kubernetes, SparX)</li>
             </ul>
             <div class="tech-row">
